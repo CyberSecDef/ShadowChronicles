@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Chronicles - Old School RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Shadow Chronicles</h1>
+        
+        <!-- Main Menu -->
+        <div id="main-menu" class="screen active">
+            <h2>Main Menu</h2>
+            <button id="new-game-btn">New Game</button>
+            <button id="load-game-btn">Load Game</button>
+        </div>
+        
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div id="game-layout">
+                <!-- Canvas for rendering -->
+                <div id="canvas-container">
+                    <canvas id="game-canvas" width="640" height="480"></canvas>
+                </div>
+                
+                <!-- Game Info Panel -->
+                <div id="info-panel">
+                    <h3>Party Status</h3>
+                    <div id="party-status"></div>
+                    
+                    <div id="game-info">
+                        <p>Gold: <span id="gold-amount">0</span></p>
+                        <p>Location: <span id="current-location">Town</span></p>
+                    </div>
+                    
+                    <div id="controls-info">
+                        <h4>Controls</h4>
+                        <p>Arrow Keys: Move</p>
+                        <p>E: Enter Location</p>
+                        <p>M: Menu</p>
+                    </div>
+                    
+                    <button id="save-game-btn">Save Game</button>
+                    <button id="return-menu-btn">Return to Menu</button>
+                </div>
+            </div>
+            
+            <!-- Battle Screen -->
+            <div id="battle-screen" class="hidden">
+                <h3>Battle!</h3>
+                <div id="battle-info">
+                    <div id="enemy-display"></div>
+                    <div id="battle-log"></div>
+                </div>
+                <div id="battle-menu">
+                    <h4>Select Character and Action</h4>
+                    <div id="character-selection"></div>
+                    <div id="action-menu">
+                        <button class="action-btn" data-action="attack">Attack</button>
+                        <button class="action-btn" data-action="magic">Magic</button>
+                        <button class="action-btn" data-action="item">Item</button>
+                        <button class="action-btn" data-action="flee">Flee</button>
+                    </div>
+                    <div id="target-selection"></div>
+                </div>
+            </div>
+            
+            <!-- Town/Dungeon Interaction Menu -->
+            <div id="location-menu" class="hidden">
+                <h3 id="location-title">Location</h3>
+                <div id="location-options"></div>
+                <button id="close-location-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

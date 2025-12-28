@@ -1,0 +1,16 @@
+{
+  "name": "shadowchronicles",
+  "version": "1.0.0",
+  "description": "Npm based old school rpg",
+  "main": "server/gameserver.js",
+  "scripts": {
+    "start": "node server/gameserver.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.18.3"
+  }
+}
