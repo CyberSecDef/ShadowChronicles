@@ -578,11 +578,23 @@ function saveGame() {
 function loadGame() {
     const saveData = localStorage.getItem('shadowChroniclesSave');
     if (saveData) {
-        ws.send(JSON.stringify({
-            type: 'loadGame',
-            saveData: saveData
-        }));
-        showScreen('game-screen');
+        try {
+            // Validate that save data is valid JSON
+            const parsedData = JSON.parse(saveData);
+            // Basic validation of required fields
+            if (parsedData && parsedData.party && Array.isArray(parsedData.party) && 
+                parsedData.overworld && parsedData.gold !== undefined) {
+                ws.send(JSON.stringify({
+                    type: 'loadGame',
+                    saveData: saveData
+                }));
+                showScreen('game-screen');
+            } else {
+                alert('Save data is corrupted!');
+            }
+        } catch (e) {
+            alert('Save data is invalid!');
+        }
     } else {
         alert('No save data found!');
     }
