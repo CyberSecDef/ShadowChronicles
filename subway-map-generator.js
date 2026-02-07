@@ -19,6 +19,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Constants for rendering
+const CHAR_WIDTH_ESTIMATE = 7; // Estimated pixel width per character for width calculations
+
 // Define subway lines (execution flows)
 const SUBWAY_LINES = {
   COMMAND_FLOW: {
@@ -409,7 +412,7 @@ function drawDataLabels() {
   
   dataLabels.forEach(label => {
     svg += `  <g opacity="0.7">\n`;
-    svg += `    <rect x="${label.x - 5}" y="${label.y - 15}" width="${label.text.length * 7 + 10}" height="40" 
+    svg += `    <rect x="${label.x - 5}" y="${label.y - 15}" width="${label.text.length * CHAR_WIDTH_ESTIMATE + 10}" height="40" 
       fill="#FFF9E6" stroke="#D4A017" stroke-width="1" rx="3" stroke-dasharray="2,2"/>\n`;
     svg += `    <text x="${label.x}" y="${label.y}" font-family="Courier New, monospace" 
       font-size="10" font-weight="bold" fill="#8B6914">${label.text}</text>\n`;
