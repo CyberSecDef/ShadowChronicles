@@ -2,6 +2,12 @@
 
 A text-based adventure game set in a post-nuclear dystopian world with supernatural elements.
 
+## 🚇 Architecture Visualization
+
+Want to understand how the codebase works? Check out the **[Interactive Subway Map](./SUBWAY_MAP.md)** - a visual guide to the architecture where stations represent modules and colored lines show execution flows.
+
+**Quick Start**: Open `subway-map.html` in your browser for an interactive exploration of the codebase architecture.
+
 ## Project Structure
 
 ```
@@ -25,6 +31,10 @@ ShadowChronicles/
 │   └── rooms/           # Room definitions
 ├── schemas/             # JSON schemas for content validation
 ├── GAME.md              # Game design specification
+├── SUBWAY_MAP.md        # Subway map visualization documentation
+├── subway-map-generator.js  # Script to generate architecture visualization
+├── subway-map.svg       # SVG subway map of codebase
+├── subway-map.html      # Interactive subway map viewer
 └── package.json         # Root package.json (workspace)
 ```
 

@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1400" style="background: #f5f5f5;">
+  <defs>
+    <!-- Define gradients and patterns -->
+    <linearGradient id="paperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fafafa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8e8e8;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Station marker -->
+    <circle id="stationMarker" r="8" fill="white" stroke-width="3"/>
+    
+    <!-- Interchange marker -->
+    <circle id="interchangeMarker" r="10" fill="white" stroke-width="4"/>
+    
+    <!-- Arrow marker for flow direction -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1800" height="1400" fill="url(#paperGrad)"/>
+  
+  <!-- Grid pattern for subway aesthetic -->
+  <g id="grid" opacity="0.1">
+  <line x1="0" y1="0" x2="0" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="50" y1="0" x2="50" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="100" y1="0" x2="100" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="150" y1="0" x2="150" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="200" y1="0" x2="200" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="250" y1="0" x2="250" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="300" y1="0" x2="300" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="350" y1="0" x2="350" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="400" y1="0" x2="400" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="450" y1="0" x2="450" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="500" y1="0" x2="500" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="550" y1="0" x2="550" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="600" y1="0" x2="600" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="650" y1="0" x2="650" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="700" y1="0" x2="700" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="750" y1="0" x2="750" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="800" y1="0" x2="800" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="850" y1="0" x2="850" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="900" y1="0" x2="900" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="950" y1="0" x2="950" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1000" y1="0" x2="1000" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1050" y1="0" x2="1050" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1100" y1="0" x2="1100" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1150" y1="0" x2="1150" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1200" y1="0" x2="1200" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1250" y1="0" x2="1250" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1300" y1="0" x2="1300" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1350" y1="0" x2="1350" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1400" y1="0" x2="1400" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1450" y1="0" x2="1450" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1500" y1="0" x2="1500" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1550" y1="0" x2="1550" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1600" y1="0" x2="1600" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1650" y1="0" x2="1650" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1700" y1="0" x2="1700" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="1750" y1="0" x2="1750" y2="1400" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="0" x2="1800" y2="0" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="50" x2="1800" y2="50" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="100" x2="1800" y2="100" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="150" x2="1800" y2="150" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="200" x2="1800" y2="200" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="250" x2="1800" y2="250" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="300" x2="1800" y2="300" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="350" x2="1800" y2="350" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="400" x2="1800" y2="400" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="450" x2="1800" y2="450" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="500" x2="1800" y2="500" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="550" x2="1800" y2="550" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="600" x2="1800" y2="600" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="650" x2="1800" y2="650" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="700" x2="1800" y2="700" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="750" x2="1800" y2="750" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="800" x2="1800" y2="800" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="850" x2="1800" y2="850" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="900" x2="1800" y2="900" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="950" x2="1800" y2="950" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="1000" x2="1800" y2="1000" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="1050" x2="1800" y2="1050" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="1100" x2="1800" y2="1100" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="1150" x2="1800" y2="1150" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="1200" x2="1800" y2="1200" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="1250" x2="1800" y2="1250" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="1300" x2="1800" y2="1300" stroke="#999" stroke-width="0.5"/>
+  <line x1="0" y1="1350" x2="1800" y2="1350" stroke="#999" stroke-width="0.5"/>
+</g>
+
+  
+  <!-- Title -->
+  <text x="900" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1a1a1a">
+    Shadow Chronicles - Codebase Subway Map
+  </text>
+  <text x="900" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    Architecture Visualization - Stations represent modules, Lines show execution flows
+  </text>
+  
+  <!-- Draw subway lines -->
+  <g id="subway-lines">
+  <!-- Command Flow Line -->
+  <g id="line-COMMAND_FLOW">
+    <line x1="150" y1="120" x2="300" y2="120" 
+          stroke="#E41E26" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="150" y1="122" x2="300" y2="122" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="300" y1="120" x2="450" y2="120" 
+          stroke="#E41E26" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="300" y1="122" x2="450" y2="122" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="450" y1="120" x2="600" y2="120" 
+          stroke="#E41E26" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="450" y1="122" x2="600" y2="122" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="600" y1="120" x2="750" y2="120" 
+          stroke="#E41E26" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="600" y1="122" x2="750" y2="122" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="750" y1="120" x2="900" y2="120" 
+          stroke="#E41E26" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="750" y1="122" x2="900" y2="122" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="900" y1="120" x2="1050" y2="120" 
+          stroke="#E41E26" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="900" y1="122" x2="1050" y2="122" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- State Synchronization Line -->
+  <g id="line-STATE_SYNC">
+    <line x1="900" y1="120" x2="250" y2="240" 
+          stroke="#0098D8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="900" y1="122" x2="250" y2="242" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="250" y1="240" x2="250" y2="360" 
+          stroke="#0098D8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="250" y1="242" x2="250" y2="362" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="250" y1="360" x2="250" y2="480" 
+          stroke="#0098D8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="250" y1="362" x2="250" y2="482" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="250" y1="480" x2="250" y2="600" 
+          stroke="#0098D8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="250" y1="482" x2="250" y2="602" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="250" y1="600" x2="250" y2="720" 
+          stroke="#0098D8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="250" y1="602" x2="250" y2="722" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="250" y1="720" x2="250" y2="840" 
+          stroke="#0098D8" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="250" y1="722" x2="250" y2="842" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- Game Initialization Line -->
+  <g id="line-GAME_INIT">
+    <line x1="150" y1="520" x2="300" y2="520" 
+          stroke="#FFD300" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="150" y1="522" x2="300" y2="522" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="300" y1="520" x2="450" y2="520" 
+          stroke="#FFD300" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="300" y1="522" x2="450" y2="522" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="450" y1="520" x2="600" y2="520" 
+          stroke="#FFD300" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="450" y1="522" x2="600" y2="522" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="600" y1="520" x2="750" y2="520" 
+          stroke="#FFD300" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="600" y1="522" x2="750" y2="522" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="750" y1="520" x2="900" y2="520" 
+          stroke="#FFD300" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="750" y1="522" x2="900" y2="522" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="900" y1="520" x2="1050" y2="520" 
+          stroke="#FFD300" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="900" y1="522" x2="1050" y2="522" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- Room & Environment Line -->
+  <g id="line-ROOM_SYSTEM">
+    <line x1="450" y1="120" x2="900" y2="520" 
+          stroke="#00A166" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="450" y1="122" x2="900" y2="522" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="900" y1="520" x2="450" y2="360" 
+          stroke="#00A166" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="900" y1="522" x2="450" y2="362" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="450" y1="360" x2="450" y2="480" 
+          stroke="#00A166" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="450" y1="362" x2="450" y2="482" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="450" y1="480" x2="450" y2="600" 
+          stroke="#00A166" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="450" y1="482" x2="450" y2="602" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="450" y1="600" x2="450" y2="720" 
+          stroke="#00A166" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="450" y1="602" x2="450" y2="722" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- Combat & NPC Line -->
+  <g id="line-COMBAT_SYSTEM">
+    <line x1="150" y1="920" x2="300" y2="920" 
+          stroke="#9B0058" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="150" y1="922" x2="300" y2="922" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="300" y1="920" x2="450" y2="920" 
+          stroke="#9B0058" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="300" y1="922" x2="450" y2="922" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="450" y1="920" x2="600" y2="920" 
+          stroke="#9B0058" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="450" y1="922" x2="600" y2="922" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="600" y1="920" x2="750" y2="920" 
+          stroke="#9B0058" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="600" y1="922" x2="750" y2="922" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- Light & Darkness Line -->
+  <g id="line-LIGHT_SYSTEM">
+    <line x1="650" y1="120" x2="650" y2="240" 
+          stroke="#F386A1" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="650" y1="122" x2="650" y2="242" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="650" y1="240" x2="650" y2="360" 
+          stroke="#F386A1" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="650" y1="242" x2="650" y2="362" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="650" y1="360" x2="650" y2="480" 
+          stroke="#F386A1" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="650" y1="362" x2="650" y2="482" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+    <line x1="650" y1="480" x2="650" y2="600" 
+          stroke="#F386A1" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+    <line x1="650" y1="482" x2="650" y2="602" 
+          stroke="#00000020" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</g>
+
+  
+  <!-- Draw stations -->
+  <g id="stations">
+  <circle cx="150" cy="120" r="8" fill="white" stroke="#E41E26" stroke-width="3" opacity="0.95"/>
+  <text x="150" y="102" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">User Input</text>
+  <text x="150" y="145" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">Browser</text>
+  <circle cx="300" cy="120" r="8" fill="white" stroke="#E41E26" stroke-width="3" opacity="0.95"/>
+  <text x="300" y="102" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">GameClient</text>
+  <text x="300" y="145" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">client/GameClient.ts</text>
+  <circle cx="450" cy="120" r="8" fill="white" stroke="#E41E26" stroke-width="3" opacity="0.95"/>
+  <text x="450" y="102" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">WebSocket Send</text>
+  <text x="450" y="145" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">Browser WebSocket API</text>
+  <circle cx="600" cy="120" r="8" fill="white" stroke="#E41E26" stroke-width="3" opacity="0.95"/>
+  <text x="600" y="102" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">WebSocket Server</text>
+  <text x="600" y="145" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">server/WebSocketServer.ts</text>
+  <circle cx="750" cy="120" r="8" fill="white" stroke="#E41E26" stroke-width="3" opacity="0.95"/>
+  <text x="750" y="102" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Command Parser</text>
+  <text x="750" y="145" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">server/CommandParser.ts</text>
+  <circle cx="900" cy="120" r="11" fill="white" stroke="#E41E26" stroke-width="5" opacity="0.95"/>
+  <circle cx="900" cy="120" r="6" fill="#E41E26" opacity="0.8"/>
+  <text x="900" y="102" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Game Engine</text>
+  <text x="900" y="145" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">server/GameEngine.ts</text>
+  <circle cx="1050" cy="120" r="8" fill="white" stroke="#E41E26" stroke-width="3" opacity="0.95"/>
+  <text x="1050" y="102" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Command Handlers</text>
+  <text x="1050" y="145" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">server/GameEngine.ts</text>
+  <circle cx="250" cy="240" r="8" fill="white" stroke="#0098D8" stroke-width="3" opacity="0.95"/>
+  <text x="250" y="222" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">State Update Message</text>
+  <text x="250" y="265" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">shared/types</text>
+  <circle cx="250" cy="360" r="8" fill="white" stroke="#0098D8" stroke-width="3" opacity="0.95"/>
+  <text x="250" y="342" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">WebSocket Response</text>
+  <text x="250" y="385" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">server/WebSocketServer.ts</text>
+  <circle cx="250" cy="480" r="8" fill="white" stroke="#0098D8" stroke-width="3" opacity="0.95"/>
+  <text x="250" y="462" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">WebSocket Receive</text>
+  <text x="250" y="505" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">Browser WebSocket API</text>
+  <circle cx="250" cy="600" r="8" fill="white" stroke="#0098D8" stroke-width="3" opacity="0.95"/>
+  <text x="250" y="582" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">State Manager</text>
+  <text x="250" y="625" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">client/StateManager.ts</text>
+  <circle cx="250" cy="720" r="8" fill="white" stroke="#0098D8" stroke-width="3" opacity="0.95"/>
+  <text x="250" y="702" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">localStorage</text>
+  <text x="250" y="745" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">Browser Storage</text>
+  <circle cx="250" cy="840" r="8" fill="white" stroke="#0098D8" stroke-width="3" opacity="0.95"/>
+  <text x="250" y="822" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">UI Manager</text>
+  <text x="250" y="865" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">client/UIManager.ts</text>
+  <circle cx="150" cy="520" r="8" fill="white" stroke="#FFD300" stroke-width="3" opacity="0.95"/>
+  <text x="150" y="502" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">main.ts</text>
+  <text x="150" y="545" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">client/main.ts</text>
+  <circle cx="300" cy="520" r="8" fill="white" stroke="#FFD300" stroke-width="3" opacity="0.95"/>
+  <text x="300" y="502" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">GameClient.init()</text>
+  <text x="300" y="545" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">client/GameClient.ts</text>
+  <circle cx="450" cy="520" r="8" fill="white" stroke="#FFD300" stroke-width="3" opacity="0.95"/>
+  <text x="450" y="502" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">UI Setup</text>
+  <text x="450" y="545" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">client/UIManager.ts</text>
+  <circle cx="600" cy="520" r="8" fill="white" stroke="#FFD300" stroke-width="3" opacity="0.95"/>
+  <text x="600" y="502" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">WebSocket Connect</text>
+  <text x="600" y="545" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">Browser WebSocket API</text>
+  <circle cx="750" cy="520" r="8" fill="white" stroke="#FFD300" stroke-width="3" opacity="0.95"/>
+  <text x="750" y="502" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Server Init</text>
+  <text x="750" y="545" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">server/index.ts</text>
+  <circle cx="900" cy="520" r="11" fill="white" stroke="#FFD300" stroke-width="5" opacity="0.95"/>
+  <circle cx="900" cy="520" r="6" fill="#FFD300" opacity="0.8"/>
+  <text x="900" y="502" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Room Loader</text>
+  <text x="900" y="545" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">server/GameEngine.ts</text>
+  <circle cx="1050" cy="520" r="8" fill="white" stroke="#FFD300" stroke-width="3" opacity="0.95"/>
+  <text x="1050" y="502" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Player Restore</text>
+  <text x="1050" y="545" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">server/GameEngine.ts</text>
+  <circle cx="450" cy="120" r="8" fill="white" stroke="#00A166" stroke-width="3" opacity="0.95"/>
+  <text x="450" y="102" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Room JSON Data</text>
+  <text x="450" y="145" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">data/rooms/*.json</text>
+  <circle cx="450" cy="360" r="8" fill="white" stroke="#00A166" stroke-width="3" opacity="0.95"/>
+  <text x="450" y="342" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Room State</text>
+  <text x="450" y="385" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">shared/types/Room</text>
+  <circle cx="450" cy="480" r="8" fill="white" stroke="#00A166" stroke-width="3" opacity="0.95"/>
+  <text x="450" y="462" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Room Descriptions</text>
+  <text x="450" y="505" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">GameEngine.getDescription()</text>
+  <circle cx="450" cy="600" r="8" fill="white" stroke="#00A166" stroke-width="3" opacity="0.95"/>
+  <text x="450" y="582" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Exit System</text>
+  <text x="450" y="625" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">GameEngine.processCommand(go)</text>
+  <circle cx="450" cy="720" r="8" fill="white" stroke="#00A166" stroke-width="3" opacity="0.95"/>
+  <text x="450" y="702" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Object System</text>
+  <text x="450" y="745" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">GameEngine.processCommand(take/drop)</text>
+  <circle cx="150" cy="920" r="8" fill="white" stroke="#9B0058" stroke-width="3" opacity="0.95"/>
+  <text x="150" y="902" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">NPC Spawn</text>
+  <text x="150" y="945" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">GameEngine.spawnNPCs()</text>
+  <circle cx="300" cy="920" r="8" fill="white" stroke="#9B0058" stroke-width="3" opacity="0.95"/>
+  <text x="300" y="902" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Combat Trigger</text>
+  <text x="300" y="945" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">GameEngine.processCommand()</text>
+  <circle cx="450" cy="920" r="8" fill="white" stroke="#9B0058" stroke-width="3" opacity="0.95"/>
+  <text x="450" y="902" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Combat State</text>
+  <text x="450" y="945" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">GameSession.inCombat</text>
+  <circle cx="600" cy="920" r="8" fill="white" stroke="#9B0058" stroke-width="3" opacity="0.95"/>
+  <text x="600" y="902" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Attack Handler</text>
+  <text x="600" y="945" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">GameEngine.attack()</text>
+  <circle cx="750" cy="920" r="8" fill="white" stroke="#9B0058" stroke-width="3" opacity="0.95"/>
+  <text x="750" y="902" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Combat Message</text>
+  <text x="750" y="945" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">shared/types/CombatMessage</text>
+  <circle cx="650" cy="120" r="8" fill="white" stroke="#F386A1" stroke-width="3" opacity="0.95"/>
+  <text x="650" y="102" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Light Check</text>
+  <text x="650" y="145" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">GameEngine.hasLight()</text>
+  <circle cx="650" cy="240" r="8" fill="white" stroke="#F386A1" stroke-width="3" opacity="0.95"/>
+  <text x="650" y="222" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Room Lighting</text>
+  <text x="650" y="265" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">Room.lighting</text>
+  <circle cx="650" cy="360" r="8" fill="white" stroke="#F386A1" stroke-width="3" opacity="0.95"/>
+  <text x="650" y="342" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Light Source Item</text>
+  <text x="650" y="385" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">InventoryItem</text>
+  <circle cx="650" cy="480" r="8" fill="white" stroke="#F386A1" stroke-width="3" opacity="0.95"/>
+  <text x="650" y="462" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Flashlight Flag</text>
+  <text x="650" y="505" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">player.flags[flashlight_on]</text>
+  <circle cx="650" cy="600" r="8" fill="white" stroke="#F386A1" stroke-width="3" opacity="0.95"/>
+  <text x="650" y="582" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="11" font-weight="600" fill="#1a1a1a">Darkness Description</text>
+  <text x="650" y="625" text-anchor="middle" font-family="Arial, sans-serif" 
+      font-size="8" fill="#666">Room.descriptions.dark</text>
+</g>
+
+  
+  <!-- Draw legend -->
+  <g id="legend">
+  <rect x="1435" y="905" width="330" height="460" 
+    fill="white" stroke="#333" stroke-width="2" rx="5" opacity="0.95"/>
+  <text x="1450" y="925" font-family="Arial, sans-serif" 
+    font-size="16" font-weight="bold" fill="#1a1a1a">Legend</text>
+  <text x="1450" y="950" font-family="Arial, sans-serif" 
+    font-size="12" font-weight="bold" fill="#333">Subway Lines (Execution Flows):</text>
+  <line x1="1450" y1="965" x2="1480" y2="965" 
+      stroke="#E41E26" stroke-width="5" stroke-linecap="round"/>
+  <text x="1490" y="970" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">Command Flow Line</text>
+  <line x1="1450" y1="983" x2="1480" y2="983" 
+      stroke="#0098D8" stroke-width="5" stroke-linecap="round"/>
+  <text x="1490" y="988" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">State Synchronization Line</text>
+  <line x1="1450" y1="1001" x2="1480" y2="1001" 
+      stroke="#FFD300" stroke-width="5" stroke-linecap="round"/>
+  <text x="1490" y="1006" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">Game Initialization Line</text>
+  <line x1="1450" y1="1019" x2="1480" y2="1019" 
+      stroke="#00A166" stroke-width="5" stroke-linecap="round"/>
+  <text x="1490" y="1024" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">Room & Environment Line</text>
+  <line x1="1450" y1="1037" x2="1480" y2="1037" 
+      stroke="#9B0058" stroke-width="5" stroke-linecap="round"/>
+  <text x="1490" y="1042" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">Combat & NPC Line</text>
+  <line x1="1450" y1="1055" x2="1480" y2="1055" 
+      stroke="#F386A1" stroke-width="5" stroke-linecap="round"/>
+  <text x="1490" y="1060" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">Light & Darkness Line</text>
+  <text x="1450" y="1088" font-family="Arial, sans-serif" 
+    font-size="12" font-weight="bold" fill="#333">Station Types:</text>
+  <circle cx="1458" cy="1103" r="6" fill="white" stroke="#666" stroke-width="2"/>
+  <text x="1470" y="1108" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">Entry Points</text>
+  <circle cx="1458" cy="1121" r="6" fill="white" stroke="#666" stroke-width="2"/>
+  <text x="1470" y="1126" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">Core Logic</text>
+  <circle cx="1458" cy="1139" r="6" fill="white" stroke="#666" stroke-width="2"/>
+  <text x="1470" y="1144" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">Transport/Communication</text>
+  <circle cx="1458" cy="1157" r="6" fill="white" stroke="#666" stroke-width="2"/>
+  <text x="1470" y="1162" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">Data Storage</text>
+  <circle cx="1458" cy="1175" r="6" fill="white" stroke="#666" stroke-width="2"/>
+  <text x="1470" y="1180" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">UI Display</text>
+  <circle cx="1458" cy="1193" r="6" fill="white" stroke="#666" stroke-width="2"/>
+  <text x="1470" y="1198" font-family="Arial, sans-serif" 
+      font-size="10" fill="#333">Event Handlers</text>
+  <text x="1450" y="1226" font-family="Arial, sans-serif" 
+    font-size="12" font-weight="bold" fill="#333">Symbols:</text>
+  <circle cx="1458" cy="1241" r="9" fill="white" stroke="#E41E26" stroke-width="4"/>
+  <text x="1470" y="1246" font-family="Arial, sans-serif" 
+    font-size="10" fill="#333">Interchange Station</text>
+  <circle cx="1458" cy="1259" r="6" fill="white" stroke="#0098D8" stroke-width="3"/>
+  <text x="1470" y="1264" font-family="Arial, sans-serif" 
+    font-size="10" fill="#333">Regular Station</text>
+</g>
+
+  
+  <!-- Draw data type labels -->
+  <g id="data-labels">
+  <g opacity="0.7">
+    <rect x="395" y="235" width="108" height="40" 
+      fill="#FFF9E6" stroke="#D4A017" stroke-width="1" rx="3" stroke-dasharray="2,2"/>
+    <text x="400" y="250" font-family="Courier New, monospace" 
+      font-size="10" font-weight="bold" fill="#8B6914">CommandMessage</text>
+    <text x="400" y="262" font-family="Courier New, monospace" 
+      font-size="8" fill="#A0826D">type: "command"</text>
+  </g>
+  <g opacity="0.7">
+    <rect x="895" y="335" width="136" height="40" 
+      fill="#FFF9E6" stroke="#D4A017" stroke-width="1" rx="3" stroke-dasharray="2,2"/>
+    <text x="900" y="350" font-family="Courier New, monospace" 
+      font-size="10" font-weight="bold" fill="#8B6914">StateUpdateMessage</text>
+    <text x="900" y="362" font-family="Courier New, monospace" 
+      font-size="8" fill="#A0826D">player: PlayerState</text>
+  </g>
+  <g opacity="0.7">
+    <rect x="595" y="535" width="38" height="40" 
+      fill="#FFF9E6" stroke="#D4A017" stroke-width="1" rx="3" stroke-dasharray="2,2"/>
+    <text x="600" y="550" font-family="Courier New, monospace" 
+      font-size="10" font-weight="bold" fill="#8B6914">Room</text>
+    <text x="600" y="562" font-family="Courier New, monospace" 
+      font-size="8" fill="#A0826D">exits, objects, NPCs</text>
+  </g>
+  <g opacity="0.7">
+    <rect x="1095" y="735" width="87" height="40" 
+      fill="#FFF9E6" stroke="#D4A017" stroke-width="1" rx="3" stroke-dasharray="2,2"/>
+    <text x="1100" y="750" font-family="Courier New, monospace" 
+      font-size="10" font-weight="bold" fill="#8B6914">PlayerState</text>
+    <text x="1100" y="762" font-family="Courier New, monospace" 
+      font-size="8" fill="#A0826D">hp, mp, inventory</text>
+  </g>
+  <g opacity="0.7">
+    <rect x="395" y="935" width="87" height="40" 
+      fill="#FFF9E6" stroke="#D4A017" stroke-width="1" rx="3" stroke-dasharray="2,2"/>
+    <text x="400" y="950" font-family="Courier New, monospace" 
+      font-size="10" font-weight="bold" fill="#8B6914">GameSession</text>
+    <text x="400" y="962" font-family="Courier New, monospace" 
+      font-size="8" fill="#A0826D">socket, player, inCombat</text>
+  </g>
+</g>
+
+</svg>
