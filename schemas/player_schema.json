@@ -1,0 +1,18 @@
+{
+  "Name": "",
+  "Gold": 0,
+  "HP": 0,
+  "MP": 0,
+  "XP": 0,
+  "Level": 0,
+  "Physical": 0,
+  "Mental": 0,
+  "Resilience": 0,
+  "inventory": [],
+  "equipped_items": [],
+  "status_effects": [],
+  "skills": [],
+  "attributes": {},
+  "location": "",
+  "notes":[]
+}

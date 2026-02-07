@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow Chronicles</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- Status Bar (Sticky Top) -->
+    <header id="status-bar">
+      <div class="status-left">
+        <button id="map-btn" class="icon-btn" title="View Map">🗺️</button>
+        <span id="player-name">---</span>
+        <span class="separator">|</span>
+        <span id="location">---</span>
+      </div>
+      <div class="status-center">
+        <div class="stat-group">
+          <label>HP</label>
+          <div class="stat-bar">
+            <div id="hp-bar" class="bar-fill hp"></div>
+            <span id="hp-text">0/0</span>
+          </div>
+        </div>
+        <div class="stat-group">
+          <label>MP</label>
+          <div class="stat-bar">
+            <div id="mp-bar" class="bar-fill mp"></div>
+            <span id="mp-text">0/0</span>
+          </div>
+        </div>
+      </div>
+      <div class="status-right">
+        <span id="gold">0 Gold</span>
+        <span class="separator">|</span>
+        <span id="level">Lvl 1</span>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div id="main-container">
+      <!-- Game Text Area -->
+      <main id="game-area">
+        <div id="game-output">
+          <div class="message system">
+            <p>Connecting to server...</p>
+          </div>
+        </div>
+        
+        <!-- Input Area -->
+        <div id="input-area">
+          <span class="prompt">&gt;</span>
+          <input type="text" id="command-input" 
+                 placeholder="Enter command..." 
+                 autocomplete="off" 
+                 autofocus>
+          <button id="send-btn" title="Send Command">↵</button>
+        </div>
+      </main>
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-section">
+          <h3>Stats</h3>
+          <div id="stats-panel">
+            <div class="stat-row"><span>Physical</span><span id="stat-physical">10</span></div>
+            <div class="stat-row"><span>Mental</span><span id="stat-mental">10</span></div>
+            <div class="stat-row"><span>Resilience</span><span id="stat-resilience">10</span></div>
+          </div>
+        </div>
+        
+        <div class="sidebar-section">
+          <h3>Inventory</h3>
+          <div id="inventory-panel">
+            <p class="empty-text">Empty</p>
+          </div>
+        </div>
+        
+        <div class="sidebar-section">
+          <h3>Equipment</h3>
+          <div id="equipment-panel">
+            <div class="equip-slot"><span>Weapon</span><span id="equip-weapon">---</span></div>
+            <div class="equip-slot"><span>Armor</span><span id="equip-armor">---</span></div>
+            <div class="equip-slot"><span>Accessory</span><span id="equip-accessory">---</span></div>
+            <div class="equip-slot"><span>Light</span><span id="equip-light">---</span></div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Spells</h3>
+          <div id="spells-panel">
+            <p class="empty-text">None learned</p>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Status Effects</h3>
+          <div id="effects-panel">
+            <p class="empty-text">None</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div id="modal-overlay" class="hidden">
+    <div id="modal-container">
+      <div id="modal-header">
+        <h2 id="modal-title">Modal</h2>
+        <button id="modal-close">&times;</button>
+      </div>
+      <div id="modal-content">
+        <!-- Dynamic content -->
+      </div>
+      <div id="modal-footer">
+        <button id="modal-ok" class="btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map Modal -->
+  <div id="map-overlay" class="hidden">
+    <div id="map-container">
+      <div id="map-header">
+        <h2>Area Map</h2>
+        <button id="map-close">&times;</button>
+      </div>
+      <div id="map-content">
+        <svg id="map-svg" width="100%" height="100%">
+          <!-- Map will be rendered here -->
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Combat Overlay -->
+  <div id="combat-overlay" class="hidden">
+    <div id="combat-container">
+      <h2>⚔️ COMBAT ⚔️</h2>
+      <div id="combat-enemy">
+        <span id="enemy-name">Enemy</span>
+        <div class="stat-bar">
+          <div id="enemy-hp-bar" class="bar-fill hp"></div>
+          <span id="enemy-hp-text">0/0</span>
+        </div>
+      </div>
+      <div id="combat-actions">
+        <button class="combat-btn" data-action="attack">Attack</button>
+        <button class="combat-btn" data-action="cast">Cast Spell</button>
+        <button class="combat-btn" data-action="use">Use Item</button>
+        <button class="combat-btn" data-action="flee">Flee</button>
+      </div>
+      <div id="combat-log">
+        <!-- Combat messages -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="scripts/main.ts"></script>
+</body>
+</html>

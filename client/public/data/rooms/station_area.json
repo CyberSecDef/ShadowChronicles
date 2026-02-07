@@ -1,0 +1,2438 @@
+[
+  {
+    "identity": {
+      "id": "ROOM_001",
+      "canonicalName": "Cryo Chamber",
+      "aliases": ["chamber", "starting room", "cryogenic chamber"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "You awaken inside a cylindrical cryogenic pod, its door hanging open and rimmed with melting frost. Cold vapor curls across the floor, dissipating slowly in the stale air. Emergency lighting flickers overhead, casting long, uneven shadows across the metal walls.\n\nA metal bench stands near the pod. Resting on it is a medkit, sealed but intact. The cryo pod's control panel is dark, its surface etched with warning symbols and unreadable diagnostics. An ID tag lies loose near the base of the pod, its clip snapped. A flashlight has been left on the floor nearby.\n\nA single doorway leads north, opening into a dark hallway.",
+      "long": "You are inside a cylindrical cryogenic pod, its heavy door hanging open on damaged hinges. Melting frost rims the doorway, and cold vapor swirls across the metal floor. Emergency lights flicker erratically overhead, creating shifting shadows on the curved walls.\n\nA sturdy metal bench stands nearby, its surface scarred from heavy use. A sealed medkit rests on the bench, its red cross symbol still visible. The pod's control panel is mounted on the interior wall, dark and etched with warning symbols. An ID tag lies discarded near the pod's base, its clip broken. A flashlight has been left on the floor.\n\nA single doorway leads north into darkness.",
+      "short": "You are in a cryogenic pod.",
+      "visited": "You are back inside the cryogenic pod where you awoke.",
+      "dark": "It is pitch black inside the pod. You can hear the distant hum of failing machinery.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": true,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "metal_floor",
+      "features": ["cryo_pods", "control_console", "emergency_lights"],
+      "hazards": [],
+      "ambientSounds": ["humming_machinery", "dripping_water"],
+      "ambientSmells": ["stale_air", "ozone"]
+    },
+    "exits": {
+      "north": {
+        "to": "ROOM_002",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You squeeze through the partially open door into the corridor beyond."
+      }
+    },
+    "objects": [
+      {
+        "id": "cryo_pod",
+        "name": "cryogenic pod",
+        "synonyms": ["cryo pod", "pod", "cryogenic chamber", "stasis pod"],
+        "description": "A cylindrical cryogenic pod with its door hanging open.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The cryogenic pod is a marvel of pre-war engineering—or it was. Now its systems are barely functional. A small display shows your vital signs from the past hours: you've been in stasis for a very, very long time. The exact duration is corrupted, but the number of digits is... concerning."
+      },
+      {
+        "id": "pod_control_panel",
+        "name": "control panel",
+        "synonyms": ["panel", "console", "pod panel", "control console"],
+        "description": "The pod's control panel, etched with warning symbols.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The control panel is mounted on the interior wall of the pod. Its surface is etched with warning symbols and unreadable diagnostics. The display is dark, but you can make out fragments:\n\"PROJECT ANCHOR... SUBJECTS: 1/47 VIABLE... CONTAINMENT BREACH...\nEVACUATION PROTOCOL...\" The rest dissolves into static."
+      },
+      {
+        "id": "metal_bench",
+        "name": "metal bench",
+        "synonyms": ["bench", "seat", "metal seat"],
+        "description": "A sturdy metal bench standing near the pod.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A sturdy metal bench, its surface scarred from heavy use. It appears to be bolted to the floor."
+      },
+      {
+        "id": "medkit",
+        "name": "medkit",
+        "synonyms": ["medical kit", "first aid kit", "kit", "medicine"],
+        "description": "A sealed medkit resting on the metal bench.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A standard pre-war emergency medkit. The red cross symbol has faded, but the case appears intact. It might still contain usable supplies."
+      },
+      {
+        "id": "id_tag",
+        "name": "ID tag",
+        "synonyms": ["id", "tag", "identification", "badge"],
+        "description": "An ID tag lying loose near the base of the pod.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A plastic ID tag with a broken clip. The name and information have been scratched out or corroded beyond recognition. Only a faded project designation remains: 'ANCHOR-47'."
+      },
+      {
+        "id": "flashlight",
+        "name": "flashlight",
+        "synonyms": ["torch", "light", "flash light"],
+        "description": "A sturdy pre-war flashlight.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A heavy-duty flashlight. The battery indicator shows it still has some charge remaining. Could be useful in dark areas.",
+        "equipmentSlot": "light_source"
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": []
+    },
+    "meta": {
+      "mapCoordinates": { "x": 0, "y": 0, "z": -3 },
+      "designerNotes": "Starting room. Establishes setting and provides initial items."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_002",
+      "canonicalName": "Dark Hallway",
+      "aliases": ["corridor", "hallway", "dark corridor"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "This narrow corridor extends north and south, its overhead lights completely dead. Only faint illumination spills in from adjacent rooms, barely revealing cracked floor tiles and faded directional signage.\n\nTo the east, an open doorway leads into a medical bay.\nTo the west, a reinforced door marked with security insignia stands ajar.\nThe corridor continues north, where the darkness deepens.",
+      "long": "A narrow corridor with dead overhead lights, illuminated only by faint light from adjacent rooms. Cracked floor tiles and faded directional signage are barely visible in the dim lighting. The air is still and heavy.",
+      "short": "You are in a dark corridor.",
+      "visited": "You're back in the dark corridor. The medical bay is east, security is west, and the corridor continues north.",
+      "dark": "The corridor is completely dark. You can barely see your hand in front of your face.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": false,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": false
+      }
+    },
+    "environment": {
+      "terrain": "cracked_tiles",
+      "features": ["cracked_floor_tiles", "faded_signage", "dead_lights"],
+      "hazards": ["low_visibility", "poor_lighting"],
+      "ambientSounds": ["distant_drips", "faint_hum"],
+      "ambientSmells": ["stale_air", "dust"]
+    },
+    "exits": {
+      "south": {
+        "to": "ROOM_001",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You return to the cryo chamber."
+      },
+      "east": {
+        "to": "ROOM_003",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You step through the open doorway into the medical bay."
+      },
+      "west": {
+        "to": "ROOM_004",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You push through the ajar security door."
+      },
+      "north": {
+        "to": "ROOM_005",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You continue north into the deepening darkness."
+      }
+    },
+    "objects": [
+      {
+        "id": "emergency_locker",
+        "name": "emergency locker",
+        "description": "A metal locker with 'EMERGENCY SUPPLIES' stenciled on the door.",
+        "initialLocation": "room",
+        "visibility": "conditional",
+        "requiresLight": true,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The locker door is slightly ajar. Inside you find what appears to be a level-1 security keycard that someone left behind.",
+        "stateChanges": {
+          "on_open": "locker_opened"
+        }
+      },
+      {
+        "id": "keycard_level1",
+        "name": "level-1 keycard",
+        "description": "A security keycard with faded text.",
+        "initialLocation": "container:emergency_locker",
+        "visibility": "conditional",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A plastic security keycard. The magnetic strip is worn but might still work. The label reads 'LEVEL 1 - GENERAL ACCESS'."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false,
+      "locker_opened": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": ["security_checkpoint"]
+    },
+    "meta": {
+      "mapCoordinates": { "x": 0, "y": 1, "z": -3 },
+      "designerNotes": "Dark corridor connecting cryo chamber to medical bay and security areas. Emergency supplies available but require light to find."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_003",
+      "canonicalName": "Medical Bay",
+      "aliases": ["medical bay", "medbay", "infirmary", "med bay"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "Rows of overturned examination beds line the walls, their restraints hanging loose. Cabinets stand open and mostly empty. Old stains mark the floor, darkened by time and neglect.\n\nA sealed medkit rests on a counter beneath a shattered light fixture. Nearby, an empty stimulant vial has rolled under one of the beds.\n\nThe only exit leads west, back into the hallway.",
+      "long": "The medical bay shows signs of hasty abandonment. Examination beds are overturned, their leather restraints dangling. Medical cabinets hang open, their contents long since scavenged or destroyed. The floor is marked with dark stains that have set into the tile over the years.\n\nA counter runs along one wall, topped with broken equipment. A sealed medkit sits beneath a shattered light fixture. An empty stimulant vial lies under one of the beds.\n\nAn open doorway leads west to the corridor.",
+      "short": "You are in the medical bay.",
+      "visited": "You're back in the abandoned medical bay. The exit is west.",
+      "dark": "The medical bay is pitch black. You can hear something dripping in the darkness.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "tiled_floor",
+      "features": ["examination_beds", "medical_cabinets", "counter", "shattered_lights"],
+      "hazards": ["broken_glass", "biohazard"],
+      "ambientSounds": ["dripping_water", "creaking_metal"],
+      "ambientSmells": ["antiseptic", "decay", "mold"]
+    },
+    "exits": {
+      "west": {
+        "to": "ROOM_002",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You step back into the dark corridor."
+      }
+    },
+    "objects": [
+      {
+        "id": "examination_beds",
+        "name": "examination beds",
+        "synonyms": ["beds", "bed", "exam beds", "tables"],
+        "description": "Overturned examination beds with restraints hanging loose.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The beds are overturned and damaged. Leather restraints dangle from the frames, their buckles corroded. These weren't for treating patients—they were for restraining them."
+      },
+      {
+        "id": "medical_cabinets",
+        "name": "medical cabinets",
+        "synonyms": ["cabinets", "cabinet", "storage"],
+        "description": "Open medical cabinets, mostly empty.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The cabinets have been thoroughly ransacked. A few broken glass vials remain, but anything useful was taken long ago."
+      },
+      {
+        "id": "counter",
+        "name": "counter",
+        "synonyms": ["medical counter", "workstation"],
+        "description": "A counter with broken medical equipment.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The counter is cluttered with broken diagnostic equipment and shattered glass. Most of it is beyond repair."
+      },
+      {
+        "id": "medkit_medbay",
+        "name": "medkit",
+        "synonyms": ["medkit", "medical kit", "kit", "first aid"],
+        "description": "A sealed medkit on the counter.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A pre-war medical kit, still sealed. The contents should be sterile and usable. It's heavier than the other medkit you found—this one might have more supplies."
+      },
+      {
+        "id": "stimulant_vial",
+        "name": "empty stimulant vial",
+        "synonyms": ["vial", "stim vial", "stimulant", "empty vial"],
+        "description": "An empty stimulant vial under a bed.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "An empty auto-injector labeled 'COMBAT STIM - AUTHORIZED USE ONLY'. Someone used it in a hurry and dropped it. The vial itself might have some scrap value."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": []
+    },
+    "meta": {
+      "mapCoordinates": { "x": 1, "y": 1, "z": -3 },
+      "designerNotes": "Medical bay with evidence of restraint use and hasty evacuation. Contains additional medical supplies."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_005",
+      "canonicalName": "Central Hub",
+      "aliases": ["central hub", "hub", "central chamber", "circular chamber"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "This circular chamber appears to be the heart of the station. Walkways branch out in four directions, but the space is swallowed by darkness. Only emergency indicators outline railings and doorframes.\n\nTo the south is the hallway you came from.\nTo the east, signage marks the Science Wing.\nTo the west, thick power conduits disappear toward Engineering.\nTo the north, a reinforced corridor remains sealed and unresponsive.",
+      "long": "A circular chamber serving as the station's central hub. Four walkways extend outward like spokes on a wheel, each leading to different sections of the facility. The overhead lights are completely dead, leaving only faint emergency indicators to mark the edges of railings and doorframes.\n\nThe architecture suggests this was a major intersection point for station personnel. Now it sits in oppressive darkness.\n\nExits lead south to the hallway, east to the Science Wing, west toward Engineering, and north to a sealed corridor.",
+      "short": "You are in the central hub.",
+      "visited": "You're back in the dark central hub. Four pathways branch out in all directions.",
+      "dark": "The central hub is pitch black. You can barely make out the faint glow of emergency indicators marking the exits.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": false,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": false
+      }
+    },
+    "environment": {
+      "terrain": "metal_grating",
+      "features": ["circular_chamber", "walkways", "railings", "emergency_indicators"],
+      "hazards": ["darkness", "low_visibility"],
+      "ambientSounds": ["distant_hum", "air_circulation", "metal_creaking"],
+      "ambientSmells": ["stale_air", "metal", "ozone"]
+    },
+    "exits": {
+      "south": {
+        "to": "ROOM_002",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You head south back to the main corridor."
+      },
+      "east": {
+        "to": "ROOM_006",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You follow the eastern walkway toward the Science Wing."
+      },
+      "west": {
+        "to": "ROOM_009",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You head west along the power conduits toward Engineering."
+      },
+      "north": {
+        "to": "ROOM_014",
+        "visible": true,
+        "oneWay": false,
+        "requires": {
+          "type": "item",
+          "id": "security_keycard_hook",
+          "value": 1
+        },
+        "blockedMessage": "The reinforced door is sealed. A card reader blinks red—it requires security clearance.",
+        "travelText": "You swipe the keycard. The reinforced door hisses open, revealing the corridor beyond."
+      }
+    },
+    "objects": [
+      {
+        "id": "walkways",
+        "name": "walkways",
+        "synonyms": ["walkway", "paths", "bridges"],
+        "description": "Metal walkways extending in four directions.",
+        "initialLocation": "room",
+        "visibility": "conditional",
+        "requiresLight": true,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The walkways are constructed from reinforced metal grating. They radiate outward from the central platform, connecting to different sections of the facility."
+      },
+      {
+        "id": "railings",
+        "name": "railings",
+        "synonyms": ["railing", "handrails", "guardrails"],
+        "description": "Metal railings outlined by emergency indicators.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The railings are marked with faint luminescent strips—emergency indicators that glow weakly in the darkness. They outline the safe path across the walkways."
+      },
+      {
+        "id": "emergency_indicators",
+        "name": "emergency indicators",
+        "synonyms": ["indicators", "emergency lights", "markers", "strips"],
+        "description": "Faint glowing strips marking the exits.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Luminescent emergency markers that require no power. They're designed to guide personnel during power failures. The glow is weak but steady, marking doorframes and railing edges."
+      },
+      {
+        "id": "central_platform",
+        "name": "central platform",
+        "synonyms": ["platform", "hub platform", "center"],
+        "description": "The circular platform at the center of the hub.",
+        "initialLocation": "room",
+        "visibility": "conditional",
+        "requiresLight": true,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A circular platform approximately 10 meters in diameter. The floor is solid metal with a slight texture for traction. Conduits and cables run beneath the grating, connecting the various sections of the facility."
+      },
+      {
+        "id": "signage_science",
+        "name": "science wing signage",
+        "synonyms": ["signage", "sign", "science sign", "directional sign"],
+        "description": "A sign marking the Science Wing to the east.",
+        "initialLocation": "room",
+        "visibility": "conditional",
+        "requiresLight": true,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A metal directional sign reading 'SCIENCE WING - RESEARCH LABS - AUTHORIZED PERSONNEL ONLY'. An arrow points east. The paint is faded but still legible."
+      },
+      {
+        "id": "power_conduits",
+        "name": "power conduits",
+        "synonyms": ["conduits", "cables", "power cables", "thick conduits"],
+        "description": "Thick power conduits running westward.",
+        "initialLocation": "room",
+        "visibility": "conditional",
+        "requiresLight": true,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Heavy-duty power conduits, each as thick as your arm, bundled together and running along the western walkway. They're clearly designed to carry massive amounts of electrical current to the Engineering section."
+      },
+      {
+        "id": "sealed_door_north",
+        "name": "reinforced door",
+        "synonyms": ["sealed door", "north door", "door", "reinforced corridor"],
+        "description": "A sealed reinforced door to the north.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A heavy reinforced door with a card reader mounted beside it. The reader's indicator light blinks red steadily. This door appears to require security clearance to open. The frame is reinforced with additional plating—whatever lies beyond was deemed important."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": ["science_wing", "engineering", "restricted_corridor"]
+    },
+    "meta": {
+      "mapCoordinates": { "x": 0, "y": 2, "z": -3 },
+      "designerNotes": "Central hub connecting all major areas of Sublevel 3. Dark room requiring light source. North exit requires level-2 keycard from Security Office."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_004",
+      "canonicalName": "Security Office",
+      "aliases": ["security office", "security", "office", "security room"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "This cramped office contains a bank of inactive monitors and a weapons locker welded shut from the inside. Papers litter a metal desk, their ink faded and brittle.\n\nA security keycard hangs from a hook near the door. A partially functional display on the desk shows a fragmented station map, portions of it corrupted or missing.\n\nInside an open desk drawer rests a multi-tool knife — a compact device combining a blade, a fold-out hammer head, and a screwdriver.\n\nThe hallway lies east.",
+      "long": "The security office is cramped and cluttered. A bank of monitors lines one wall, all of them dark and lifeless. A weapons locker stands in the corner, welded shut from the inside—someone didn't want what was in there getting out.\n\nPapers cover a metal desk, their text faded to near-illegibility. A security keycard dangles from a hook mounted near the doorframe. The desk's display unit flickers weakly, showing fragments of a station map with corrupted sections.\n\nAn open drawer reveals a multi-tool knife with multiple folded implements.\n\nThe exit east leads back to the corridor.",
+      "short": "You are in the security office.",
+      "visited": "You're back in the cramped security office. The corridor is east.",
+      "dark": "The security office is pitch black. You can hear the faint buzz of failing electronics.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "tiled_floor",
+      "features": ["monitors", "weapons_locker", "metal_desk", "display_unit"],
+      "hazards": [],
+      "ambientSounds": ["buzzing_electronics", "paper_rustling"],
+      "ambientSmells": ["stale_air", "dust", "old_paper"]
+    },
+    "exits": {
+      "east": {
+        "to": "ROOM_002",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You step back into the dark corridor."
+      }
+    },
+    "objects": [
+      {
+        "id": "monitor_bank",
+        "name": "monitors",
+        "synonyms": ["monitor bank", "bank of monitors", "screens", "displays"],
+        "description": "A bank of inactive security monitors.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Six monitors arranged in two rows of three. All are dark, their screens cracked or shattered. Whatever they once displayed is long gone."
+      },
+      {
+        "id": "weapons_locker",
+        "name": "weapons locker",
+        "synonyms": ["locker", "weapons cabinet", "gun locker", "armory"],
+        "description": "A weapons locker welded shut from the inside.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The locker is sealed tight, welded from the inside. Scorch marks and deep gouges mar the exterior. Someone—or something—didn't want to be let out. Or didn't want anything getting in."
+      },
+      {
+        "id": "metal_desk",
+        "name": "metal desk",
+        "synonyms": ["desk", "security desk", "table"],
+        "description": "A metal desk littered with faded papers.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A standard-issue security desk, bolted to the floor. Papers are scattered across its surface, and an open drawer reveals various odds and ends."
+      },
+      {
+        "id": "faded_papers",
+        "name": "papers",
+        "synonyms": ["paper", "documents", "files", "reports"],
+        "description": "Faded papers littering the desk.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Most of the text has faded beyond recognition. You can make out fragments: '...containment protocols failing...', '...personnel advised to evacuate...', '...do not engage subjects...'. The dates are corrupted, but these appear to be incident reports from the facility's final days."
+      },
+      {
+        "id": "security_keycard_hook",
+        "name": "security keycard",
+        "synonyms": ["keycard", "card", "access card", "level 2 keycard"],
+        "description": "A security keycard hanging from a hook.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A level-2 security keycard with moderate wear. The magnetic strip looks intact. The label reads 'LEVEL 2 - RESTRICTED ACCESS'. This should open doors the level-1 card cannot."
+      },
+      {
+        "id": "station_map_display",
+        "name": "display",
+        "synonyms": ["map display", "station map", "map", "terminal", "screen"],
+        "description": "A partially functional display showing a fragmented station map.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The display flickers weakly, showing a corrupted schematic of the research bunker. You can make out Sublevel 3 where you are now, but the upper levels are mostly static. Red indicators mark several areas, though their meaning is unclear. One section labeled 'LABS - SUBLEVEL 4' pulses intermittently."
+      },
+      {
+        "id": "desk_drawer",
+        "name": "desk drawer",
+        "synonyms": ["drawer", "open drawer"],
+        "description": "An open desk drawer.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The drawer is open, revealing miscellaneous items inside. Most notably, there's a multi-tool knife resting among scattered pens and broken equipment."
+      },
+      {
+        "id": "multi_tool_knife",
+        "name": "multi-tool knife",
+        "synonyms": ["multitool", "knife", "multi tool", "tool knife", "blade"],
+        "description": "A compact multi-tool knife in the desk drawer.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A well-made multi-tool combining a sharp blade, a fold-out hammer head, and a screwdriver. The blade is still sharp, and the tool feels solid in your hand. This could be useful for both combat and utility purposes.",
+        "equipmentSlot": "weapon"
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": []
+    },
+    "meta": {
+      "mapCoordinates": { "x": -1, "y": 1, "z": -3 },
+      "designerNotes": "Security office west of main corridor. Contains level-2 keycard and multi-tool weapon. Welded locker hints at containment issues."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_006",
+      "canonicalName": "Science Wing Entrance",
+      "aliases": ["science wing entrance", "science entrance", "entrance", "science wing"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "White composite panels line the walls here, marred by scorch marks and hairline fractures. A sealed access door blocks deeper access to the labs, its scanner inactive.\n\nThe Central Hub lies west.\nBeyond the door to the east is the Primary Science Lab, once access is restored.",
+      "long": "The entrance to the Science Wing is lined with white composite panels, their pristine surfaces marred by scorch marks and a network of hairline fractures. The damage suggests intense heat or energy discharge.\n\nAn access door to the east stands sealed, its biometric scanner dark and unresponsive. A notice beside the door reads 'PRIMARY SCIENCE LAB - LEVEL 3 CLEARANCE REQUIRED'.\n\nThe Central Hub is back to the west.",
+      "short": "You are at the Science Wing entrance.",
+      "visited": "You're back at the Science Wing entrance. The sealed lab door is to the east, the Central Hub to the west.",
+      "dark": "The Science Wing entrance is dark. You can hear a faint electrical buzzing from the sealed door.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "composite_floor",
+      "features": ["white_panels", "scorch_marks", "sealed_door", "biometric_scanner"],
+      "hazards": [],
+      "ambientSounds": ["electrical_buzzing", "faint_hum"],
+      "ambientSmells": ["ozone", "burnt_plastic", "sterile_air"]
+    },
+    "exits": {
+      "west": {
+        "to": "ROOM_005",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You return to the Central Hub."
+      },
+      "east": {
+        "to": "ROOM_007",
+        "visible": true,
+        "oneWay": false,
+        "requires": {
+          "type": "item",
+          "id": "power_cell",
+          "value": 1
+        },
+        "blockedMessage": "The access door is sealed shut. The biometric scanner is dark and inactive—it appears to have no power.",
+        "travelText": "You insert the power cell into the emergency access port. The scanner flickers to life, reads your biometrics, and the door hisses open."
+      }
+    },
+    "objects": [
+      {
+        "id": "white_panels",
+        "name": "white composite panels",
+        "synonyms": ["panels", "white panels", "wall panels", "walls"],
+        "description": "White composite panels lining the walls.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The panels are made of a durable composite material, designed to be heat-resistant and easy to decontaminate. However, they're covered in scorch marks and hairline fractures—evidence of something going very wrong here."
+      },
+      {
+        "id": "scorch_marks",
+        "name": "scorch marks",
+        "synonyms": ["marks", "burns", "burn marks", "damage"],
+        "description": "Dark scorch marks across the wall panels.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The scorch marks form irregular patterns across the walls and ceiling. They suggest intense heat or energy discharge—possibly plasma or electrical in nature. Whatever happened here was violent."
+      },
+      {
+        "id": "sealed_lab_door",
+        "name": "sealed access door",
+        "synonyms": ["access door", "door", "lab door", "sealed door"],
+        "description": "A sealed access door with an inactive scanner.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A reinforced access door designed for high-security areas. The biometric scanner beside it is completely dark—no power. There's an emergency access port below the scanner, marked 'EMERGENCY POWER CELL SLOT'."
+      },
+      {
+        "id": "biometric_scanner",
+        "name": "biometric scanner",
+        "synonyms": ["scanner", "bio scanner", "reader"],
+        "description": "An inactive biometric scanner beside the door.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A sophisticated biometric scanner designed to read fingerprints, retinal patterns, and likely DNA samples. It's completely dark—without power, it's useless. Below it is an emergency power cell slot for backup power."
+      },
+      {
+        "id": "clearance_notice",
+        "name": "clearance notice",
+        "synonyms": ["notice", "sign", "warning"],
+        "description": "A notice beside the door requiring level 3 clearance.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A metal plaque reading: 'PRIMARY SCIENCE LAB - LEVEL 3 CLEARANCE REQUIRED - PROJECT ANCHOR PERSONNEL ONLY - BIOHAZARD PROTOCOLS IN EFFECT'. The words 'PROJECT ANCHOR' are embossed in red."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": ["primary_science_lab"]
+    },
+    "meta": {
+      "mapCoordinates": { "x": 1, "y": 2, "z": -3 },
+      "designerNotes": "Science Wing entrance with sealed lab door. Requires power cell to activate biometric scanner and access Primary Science Lab (ROOM_007)."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_007",
+      "canonicalName": "Primary Science Lab",
+      "aliases": ["primary science lab", "science lab", "lab", "laboratory"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "Long laboratory tables fill the room, covered with shattered glassware and dormant instruments. Ceiling-mounted projectors hang frozen mid-experiment.\n\nA functional terminal dominates the center table. Accessing it reveals a psionic theory log, detailing controlled cognition as a stabilizing physical force. A lab access badge rests beside the terminal.\n\nA containment chamber lies to the north.\nThe Science Wing Entrance is to the west.",
+      "long": "This was once the primary research laboratory for PROJECT ANCHOR. Long laboratory tables fill the space, their surfaces covered with shattered glassware, scattered instruments, and frozen holographic displays. Ceiling-mounted projectors hang motionless, suspended in the middle of experiments that will never complete.\n\nA terminal at the center table still functions, its screen displaying fragments of psionic theory research. Beside it rests a lab access badge, left behind in the evacuation.\n\nThe containment chamber is to the north. The Science Wing Entrance lies west.",
+      "short": "You are in the Primary Science Lab.",
+      "visited": "You're back in the Primary Science Lab. The terminal sits at the center, the containment chamber to the north.",
+      "dark": "The lab is pitch black. You can hear the faint hum of the terminal's cooling fans.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "lab_floor",
+      "features": ["laboratory_tables", "ceiling_projectors", "terminal", "shattered_equipment"],
+      "hazards": ["broken_glass"],
+      "ambientSounds": ["terminal_hum", "distant_ventilation", "glass_crunching"],
+      "ambientSmells": ["ozone", "chemical_residue", "dust"]
+    },
+    "exits": {
+      "west": {
+        "to": "ROOM_006",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You step back into the Science Wing Entrance."
+      },
+      "north": {
+        "to": "ROOM_008",
+        "visible": true,
+        "oneWay": false,
+        "requires": {
+          "type": "item",
+          "id": "lab_access_badge",
+          "value": 1
+        },
+        "blockedMessage": "The containment chamber door is locked. It requires a lab access badge to open.",
+        "travelText": "You swipe the lab access badge. The containment chamber door unlocks with a heavy click."
+      }
+    },
+    "objects": [
+      {
+        "id": "laboratory_tables",
+        "name": "laboratory tables",
+        "synonyms": ["tables", "lab tables", "workbenches"],
+        "description": "Long laboratory tables covered with broken equipment.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Heavy-duty laboratory tables designed for scientific research. They're covered with shattered glassware, scorched notebooks, and various instruments that have been damaged or left dormant. The chaos suggests a hasty evacuation."
+      },
+      {
+        "id": "ceiling_projectors",
+        "name": "ceiling-mounted projectors",
+        "synonyms": ["projectors", "holographic projectors", "displays"],
+        "description": "Frozen holographic projectors hanging from the ceiling.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Advanced holographic projection systems, frozen mid-display. One shows a rotating double helix structure. Another displays mathematical equations. A third shows what appears to be a human brain with highlighted neural pathways."
+      },
+      {
+        "id": "shattered_glassware",
+        "name": "shattered glassware",
+        "synonyms": ["glassware", "glass", "beakers", "equipment"],
+        "description": "Broken laboratory glassware scattered across the tables.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Shattered beakers, test tubes, and other glassware. Some still contain dried chemical residue. The breakage patterns suggest they were knocked over in a hurry, not deliberately destroyed."
+      },
+      {
+        "id": "psionic_terminal",
+        "name": "terminal",
+        "synonyms": ["computer", "terminal", "console", "psionic terminal", "research terminal"],
+        "description": "A functional terminal displaying psionic theory research.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A research terminal still powered and functional. The screen displays:\n\n'PSIONIC THEORY LOG - DR. KAINE\nSubject: Controlled Cognition as Physical Force\n\nBreakthrough: Human consciousness, when properly focused, can stabilize quantum states. Intent shapes matter at the subatomic level. Test subjects demonstrating 15-30% improvement in environmental manipulation.\n\nKey principle: MENTAL FOCUS. The mind must achieve perfect clarity. Emotion disrupts the field. Only pure intent produces reliable results.\n\nSide effects: Extreme fatigue, neural strain, potential long-term cognitive changes.\n\nProject Anchor applications: [DATA CORRUPTED]'\n\nAs you read, pressure builds behind your eyes. The concepts force themselves into understanding. You instinctively focus on a nearby flickering light—and it steadies. Then exhaustion hits you like a wave.\n\n**NEW ABILITY LEARNED: Mental Focus**\nYou can now project controlled psionic effort to interact with unstable environments.",
+        "stateChanges": {
+          "ability_learned": "mental_focus"
+        }
+      },
+      {
+        "id": "lab_access_badge",
+        "name": "lab access badge",
+        "synonyms": ["badge", "access badge", "lab badge", "keycard"],
+        "description": "A lab access badge beside the terminal.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A level-3 lab access badge. The name has been scratched off, but the photo shows a middle-aged researcher with tired eyes. The badge reads 'DR. KAINE - LEAD RESEARCHER - PROJECT ANCHOR'."
+      },
+      {
+        "id": "scorched_notebooks",
+        "name": "scorched notebooks",
+        "synonyms": ["notebooks", "notes", "research notes", "journals"],
+        "description": "Burned research notebooks scattered on the tables.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Research notebooks with scorched pages. Most of the writing is illegible, but you can make out fragments: '...subjects showing unprecedented neural adaptation...', '...containment protocols insufficient...', '...they're not just survivors, they're evolving...'"
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false,
+      "ability_learned": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": ["containment_chamber"]
+    },
+    "meta": {
+      "mapCoordinates": { "x": 2, "y": 2, "z": -3 },
+      "designerNotes": "Primary Science Lab with spell/ability acquisition. Reading the psionic terminal grants Mental Focus ability. Contains lab access badge for containment chamber (ROOM_008)."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_008",
+      "canonicalName": "Specimen Containment Room",
+      "aliases": ["specimen containment room", "containment room", "containment chamber", "specimen room"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "The temperature drops sharply upon entry. A shattered containment cylinder dominates the room, its thick glass blown outward. Deep gouges score the floor, and dried biological residue coats the walls.\n\nThe air feels dense, oppressive — pressing against your thoughts.\n\nA psionically warped humanoid specimen lurches from the shadows near the ruptured cylinder. Its movements are erratic, driven by broken conditioning and residual containment programming. It reacts immediately to your presence.\n\nThere is no room to maneuver. No path forward without confrontation.\n\nA sparking wall-mounted panel nearby holds a containment override module, but it cannot be accessed while the threat remains.\n\nThe only exit lies south, back to the Primary Science Lab — assuming you survive.",
+      "long": "This containment chamber is frigid, its environmental systems still partially functional despite the catastrophic failure. A massive containment cylinder dominates the center of the room, its reinforced glass shattered outward in a violent explosion. Deep gouges scar the metal floor, and dried biological residue — dark and viscous — coats the walls in irregular patterns.\n\nThe air itself feels wrong. Dense. Oppressive. It presses against your mind like an invisible weight.\n\nA psionically warped specimen stands near the ruptured cylinder, its form vaguely humanoid but twisted by failed experiments. It moves with jerky, unnatural motions.\n\nA wall-mounted panel sparks intermittently, revealing a containment override module within.\n\nThe exit south leads back to the Primary Science Lab.",
+      "short": "You are in the Specimen Containment Room.",
+      "visited": "You're back in the cold containment room. The shattered cylinder and deep gouges serve as grim reminders of what happened here.",
+      "dark": "The containment room is pitch black and freezing cold. You can hear labored breathing somewhere in the darkness.",
+      "dynamicVariants": {
+        "after_combat": "The containment room is quiet now. The specimen lies motionless on the floor, its tortured existence finally ended. The wall-mounted panel still sparks weakly, the containment override module accessible at last."
+      }
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "metal_floor",
+      "features": ["containment_cylinder", "wall_panel", "gouges", "biological_residue"],
+      "hazards": ["cold_temperature", "psionic_pressure", "hostile_npc"],
+      "ambientSounds": ["sparking_electronics", "labored_breathing", "dripping"],
+      "ambientSmells": ["antiseptic", "ozone", "decay"]
+    },
+    "exits": {
+      "south": {
+        "to": "ROOM_007",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You retreat back to the Primary Science Lab."
+      }
+    },
+    "objects": [
+      {
+        "id": "containment_cylinder",
+        "name": "containment cylinder",
+        "synonyms": ["cylinder", "shattered cylinder", "glass cylinder", "pod"],
+        "description": "A massive shattered containment cylinder.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The containment cylinder is a marvel of engineering — or was. Reinforced glass several inches thick has been blown outward from the inside, the shards scattered across the floor. Whatever was contained here possessed tremendous strength. Chemical sensors and neural inhibitor arrays line the interior, all non-functional now."
+      },
+      {
+        "id": "floor_gouges",
+        "name": "deep gouges",
+        "synonyms": ["gouges", "scratches", "claw marks", "scars"],
+        "description": "Deep gouges scoring the metal floor.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The gouges are deep — carved into reinforced steel as if it were soft clay. The pattern suggests desperate, frenzied movement. Whatever made these marks was incredibly strong and possibly in extreme distress."
+      },
+      {
+        "id": "biological_residue",
+        "name": "biological residue",
+        "synonyms": ["residue", "biological matter", "substance", "stains"],
+        "description": "Dried biological residue coating the walls.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The residue is dark, viscous, and thoroughly dried. Analysis would require proper equipment, but it appears to be a mixture of human and... something else. The patterns suggest violent exertion or transformation."
+      },
+      {
+        "id": "wall_panel",
+        "name": "wall-mounted panel",
+        "synonyms": ["panel", "sparking panel", "wall panel", "control panel"],
+        "description": "A sparking wall-mounted panel.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The panel sparks intermittently, its circuits damaged but still partially functional. Inside you can see a containment override module — a compact device that could be useful for bypassing security systems elsewhere in the facility."
+      },
+      {
+        "id": "containment_override_module",
+        "name": "containment override module",
+        "synonyms": ["override module", "module", "override device"],
+        "description": "A containment override module in the wall panel.",
+        "initialLocation": "room",
+        "visibility": "conditional",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A specialized override module designed to bypass containment protocols. It's still functional despite the damage to its housing. This could be used to access restricted areas or override emergency lockdowns."
+      }
+    ],
+    "npcs": [
+      {
+        "id": "warped_specimen",
+        "name": "Psionically Warped Specimen",
+        "description": "A twisted, vaguely humanoid creature, its body warped by psionic experimentation.",
+        "hostile": true,
+        "spawnConditions": [],
+        "despawnConditions": ["specimen_defeated"],
+        "behavior": "aggressive",
+        "dialogue": {}
+      }
+    ],
+    "state": {
+      "visited": false,
+      "specimen_defeated": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": []
+    },
+    "meta": {
+      "mapCoordinates": { "x": 2, "y": 3, "z": -3 },
+      "designerNotes": "First combat encounter. Psionically warped specimen NPC must be defeated to access containment override module. Contains lore about Project Anchor's experiments."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_009",
+      "canonicalName": "Engineering Wing Entrance",
+      "aliases": ["engineering wing entrance", "engineering entrance", "engineering wing", "entrance"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "The smell of oil and ozone fills this area. Thick cables snake along the walls, disappearing into maintenance shafts. Warning indicators blink weakly, signaling failures deeper inside.\n\nThe Central Hub lies east.\nA utility corridor stretches west.",
+      "long": "The entrance to the Engineering Wing is thick with the smell of machine oil and ozone. Massive power cables—each as thick as your arm—snake along the walls and ceiling, bundled together and disappearing into maintenance shafts. Warning indicators mounted on the walls blink weakly in amber and red, signaling system failures deeper in the complex.\n\nThe walls here are reinforced metal, designed to withstand industrial accidents. Scorch marks and coolant stains suggest they've been tested.\n\nThe Central Hub is back to the east. A utility corridor extends west into the Engineering section.",
+      "short": "You are at the Engineering Wing entrance.",
+      "visited": "You're back at the Engineering Wing entrance. The Central Hub is east, the utility corridor west.",
+      "dark": "The Engineering entrance is dark. You can hear the hum of failing power systems and smell ozone.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "metal_floor",
+      "features": ["power_cables", "maintenance_shafts", "warning_indicators", "reinforced_walls"],
+      "hazards": ["electrical_hazard"],
+      "ambientSounds": ["electrical_hum", "distant_machinery", "cable_buzz"],
+      "ambientSmells": ["oil", "ozone", "coolant", "metal"]
+    },
+    "exits": {
+      "east": {
+        "to": "ROOM_005",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You return to the Central Hub."
+      },
+      "west": {
+        "to": "ROOM_010",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You head west into the utility corridor."
+      }
+    },
+    "objects": [
+      {
+        "id": "power_cables",
+        "name": "power cables",
+        "synonyms": ["cables", "thick cables", "bundled cables", "wires"],
+        "description": "Massive power cables snaking along the walls.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Heavy-duty power cables designed to carry enormous electrical loads. They're bundled together in groups of six to eight, their insulation scorched in places. Some still hum faintly with residual current. Touching them would be extremely dangerous."
+      },
+      {
+        "id": "maintenance_shafts",
+        "name": "maintenance shafts",
+        "synonyms": ["shafts", "access shafts", "conduits"],
+        "description": "Maintenance shafts where cables disappear.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Large rectangular openings in the walls where cable bundles disappear into the infrastructure. They're sealed with heavy grates, but you can see deeper into the maintenance systems. The shafts extend both up and down, likely connecting multiple levels."
+      },
+      {
+        "id": "warning_indicators",
+        "name": "warning indicators",
+        "synonyms": ["indicators", "warning lights", "alerts", "status lights"],
+        "description": "Weakly blinking warning indicators.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Status panels with various warning indicators. Most show amber or red lights: 'COOLANT PRESSURE LOW', 'REACTOR OFFLINE', 'BACKUP GENERATOR FAILURE', 'CONTAINMENT BREACH DETECTED'. The systems have been failing for a long time."
+      },
+      {
+        "id": "reinforced_walls",
+        "name": "reinforced walls",
+        "synonyms": ["walls", "metal walls", "reinforced plating"],
+        "description": "Reinforced metal walls with scorch marks.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The walls are constructed from thick reinforced plating, designed to contain industrial accidents, explosions, or radiation leaks. Scorch marks and coolant stains suggest they've withstood at least a few incidents. The plating is several inches thick."
+      },
+      {
+        "id": "coolant_stains",
+        "name": "coolant stains",
+        "synonyms": ["stains", "chemical stains", "residue"],
+        "description": "Dried coolant stains on the floor and walls.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Fluorescent green stains where coolant has leaked and dried. The chemical smell is still faint but detectable. These stains are old, suggesting the coolant systems failed weeks or months ago."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": ["utility_corridor"]
+    },
+    "meta": {
+      "mapCoordinates": { "x": -1, "y": 2, "z": -3 },
+      "designerNotes": "Engineering Wing entrance west of Central Hub. Features industrial hazards and failing systems. Connects to utility corridor (ROOM_010)."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_010",
+      "canonicalName": "Utility Corridor",
+      "aliases": ["utility corridor", "corridor", "pipe corridor"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "Pipes line both sides of this long corridor, some leaking steadily onto the floor. Steam hisses from ruptured valves, and condensation slicks the ground.\n\nTo the north lies the generator room.\nTo the south, signage points to pump controls.\nA low maintenance opening leads west.",
+      "long": "This utilitarian corridor serves as the main artery for the facility's pipe systems. Dozens of pipes of varying sizes line both walls—water, coolant, steam, and waste systems all running parallel. Several pipes leak steadily, creating puddles on the floor. Ruptured pressure valves release jets of steam at irregular intervals, and condensation makes the metal floor dangerously slick.\n\nThe air is humid and hot, filled with the sound of dripping water and hissing steam.\n\nExits lead north to the generator room, south to pump controls, and west through a low maintenance opening. The Engineering Wing entrance is back to the east.",
+      "short": "You are in the utility corridor.",
+      "visited": "You're back in the humid utility corridor. Pipes leak and steam hisses around you.",
+      "dark": "The utility corridor is pitch black. You can hear water dripping and steam hissing in the darkness.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "wet_metal",
+      "features": ["pipes", "steam_valves", "puddles", "signage"],
+      "hazards": ["slippery_floor", "steam_jets", "heat"],
+      "ambientSounds": ["dripping_water", "hissing_steam", "pipe_creaking"],
+      "ambientSmells": ["steam", "rust", "chemical_residue"]
+    },
+    "exits": {
+      "east": {
+        "to": "ROOM_009",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You head back east to the Engineering Wing entrance."
+      },
+      "north": {
+        "to": "ROOM_011",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You head north toward the generator room."
+      },
+      "south": {
+        "to": "ROOM_012",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You follow the signage south to the pump controls."
+      },
+      "west": {
+        "to": "ROOM_013",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You crouch down and crawl through the low maintenance opening."
+      }
+    },
+    "objects": [
+      {
+        "id": "pipe_systems",
+        "name": "pipes",
+        "synonyms": ["pipe", "pipe systems", "piping", "tubes"],
+        "description": "Dozens of pipes lining both walls of the corridor.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A complex network of pipes runs along both walls. They're color-coded: blue for water, red for coolant, yellow for waste, and gray for steam. Many show signs of age and neglect—rust, corrosion, and stress fractures. Several are actively leaking."
+      },
+      {
+        "id": "leaking_pipes",
+        "name": "leaking pipes",
+        "synonyms": ["leaks", "damaged pipes", "broken pipes"],
+        "description": "Several pipes leaking onto the floor.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Multiple pipes have developed leaks, ranging from slow drips to steady streams. The leaking fluids appear to be mostly water and coolant. The constant moisture has accelerated corrosion on nearby metal surfaces."
+      },
+      {
+        "id": "steam_valves",
+        "name": "ruptured valves",
+        "synonyms": ["valves", "steam valves", "pressure valves", "ruptured valve"],
+        "description": "Pressure valves releasing jets of steam.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Several pressure relief valves have ruptured, releasing high-pressure steam at irregular intervals. The steam is hot enough to cause burns. These valves were designed to prevent pipe explosions, but they've been stuck open for some time."
+      },
+      {
+        "id": "floor_puddles",
+        "name": "puddles",
+        "synonyms": ["puddle", "water", "condensation", "wet floor"],
+        "description": "Puddles of water and condensation on the floor.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The floor is covered in puddles from the leaking pipes and condensation. The metal surface is slick and treacherous. Walking carefully is advised to avoid slipping."
+      },
+      {
+        "id": "directional_signage",
+        "name": "signage",
+        "synonyms": ["sign", "signs", "directional signs"],
+        "description": "Directional signage pointing to different areas.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Metal signs mounted on the walls. One points north labeled 'GENERATOR ROOM - AUTHORIZED PERSONNEL ONLY'. Another points south reading 'PUMP CONTROLS - MAINTENANCE ACCESS'. A third indicates a low opening to the west marked 'COOLANT SYSTEMS - RESTRICTED'."
+      },
+      {
+        "id": "maintenance_opening",
+        "name": "maintenance opening",
+        "synonyms": ["opening", "low opening", "hatch", "crawlspace"],
+        "description": "A low maintenance opening in the west wall.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A rectangular opening about three feet high, designed for maintenance access to the coolant systems. It would require crawling to pass through. The opening is marked 'COOLANT SYSTEMS - RESTRICTED ACCESS'."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": ["generator_room", "pump_controls", "coolant_systems"]
+    },
+    "meta": {
+      "mapCoordinates": { "x": -2, "y": 2, "z": -3 },
+      "designerNotes": "Central utility corridor in Engineering section. Hub connecting to generator room (north), pump controls (south), and coolant systems (west). Features environmental hazards (steam, slippery floor)."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_011",
+      "canonicalName": "Generator Room",
+      "aliases": ["generator room", "generator", "power room"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "A massive generator dominates the chamber, silent and inert. Control panels surround it, their indicators dark. The smell of burnt insulation lingers.\n\nAn empty housing clearly indicates where an auxiliary power cell must be installed. Without proper tools, working here appears dangerous.\n\nThe Utility Corridor lies south.",
+      "long": "This chamber houses the facility's primary backup generator—a massive industrial machine that stands silent and inert. The generator is the size of a small vehicle, its metal casing scorched and discolored from overheating. Control panels ring the perimeter, all of their status indicators dark and lifeless.\n\nThe air is thick with the acrid smell of burnt insulation and ozone. Electrical components have clearly failed catastrophically.\n\nAn auxiliary power cell housing sits empty on the side of the generator, its access panel hanging open. Warning labels around the generator caution about high voltage and the need for proper safety equipment.\n\nThe Utility Corridor is back to the south.",
+      "short": "You are in the generator room.",
+      "visited": "You're back in the generator room. The massive inert generator looms silently.",
+      "dark": "The generator room is pitch black. You can smell burnt insulation and hear the faint tick of cooling metal.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "concrete_floor",
+      "features": ["generator", "control_panels", "power_cell_housing", "warning_labels"],
+      "hazards": ["electrical_hazard", "burnt_components"],
+      "ambientSounds": ["cooling_metal_ticking", "electrical_crackling"],
+      "ambientSmells": ["burnt_insulation", "ozone", "metal"]
+    },
+    "exits": {
+      "south": {
+        "to": "ROOM_010",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You head back south to the Utility Corridor."
+      }
+    },
+    "objects": [
+      {
+        "id": "backup_generator",
+        "name": "generator",
+        "synonyms": ["backup generator", "massive generator", "power generator", "machine"],
+        "description": "A massive, silent backup generator.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The backup generator is a substantial industrial machine, designed to power the entire facility during primary power failure. Its casing is scorched and discolored from severe overheating. Several access panels are blown open, revealing burnt circuitry and melted components. It would take significant expertise and replacement parts to repair this."
+      },
+      {
+        "id": "control_panels_gen",
+        "name": "control panels",
+        "synonyms": ["panels", "console", "controls", "indicators"],
+        "description": "Control panels surrounding the generator.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Multiple control panels monitor and regulate the generator's operation. All status indicators are dark. The screens are blank. Even the emergency backup lights are non-functional. The panels show signs of electrical surge damage—scorched circuit boards and blown capacitors."
+      },
+      {
+        "id": "power_cell_housing",
+        "name": "power cell housing",
+        "synonyms": ["housing", "auxiliary housing", "empty housing", "cell slot"],
+        "description": "An empty housing for an auxiliary power cell.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A rectangular housing built into the side of the generator, designed to accept an auxiliary power cell. The housing is empty—the cell has been removed or was never installed. A small diagnostic display beside the housing shows 'AUXILIARY POWER: OFFLINE'. Installing a power cell here might provide emergency power to critical systems."
+      },
+      {
+        "id": "burnt_insulation",
+        "name": "burnt insulation",
+        "synonyms": ["insulation", "burnt wiring", "damaged components"],
+        "description": "Burnt electrical insulation and components.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Electrical wiring with blackened, melted insulation is visible through damaged access panels. The smell is acrid and chemical. This level of damage suggests a catastrophic electrical overload or short circuit—possibly during the facility's final moments of operation."
+      },
+      {
+        "id": "warning_labels_gen",
+        "name": "warning labels",
+        "synonyms": ["warnings", "safety labels", "caution signs"],
+        "description": "Warning labels around the generator.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Yellow and red warning labels cover the generator: 'DANGER - HIGH VOLTAGE', 'AUTHORIZED PERSONNEL ONLY', 'SAFETY EQUIPMENT REQUIRED', 'DO NOT OPERATE WITHOUT PROPER TRAINING'. One particularly ominous label reads: 'WARNING - IMPROPER SHUTDOWN MAY CAUSE CATASTROPHIC FAILURE'."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": []
+    },
+    "meta": {
+      "mapCoordinates": { "x": -2, "y": 3, "z": -3 },
+      "designerNotes": "Generator room with failed backup power system. Empty auxiliary power cell housing suggests potential puzzle element. High voltage warnings indicate danger."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_012",
+      "canonicalName": "Pump Control Room",
+      "aliases": ["pump control room", "pump room", "pump controls"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "Water stains climb halfway up the walls, evidence of prior flooding. A large manual pump assembly sits at the center of the room, its controls jammed and incomplete.\n\nA detached pump control handle rests nearby.\n\nThe Utility Corridor lies north.",
+      "long": "This room houses the facility's manual pump controls, designed as a backup for managing water and coolant flow. Dark water stains climb halfway up the walls, clear evidence of severe flooding at some point. The floor is still damp in places, and the air smells of stagnant water and mildew.\n\nA large manual pump assembly dominates the center of the room. The controls appear jammed, and a critical component—the pump control handle—has been detached and left nearby.\n\nThe Utility Corridor is back to the north.",
+      "short": "You are in the pump control room.",
+      "visited": "You're back in the damp pump control room. Water stains mark the walls, and the manual pump sits idle.",
+      "dark": "The pump control room is pitch black. You can hear water dripping and smell mildew.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "damp_floor",
+      "features": ["pump_assembly", "water_stains", "control_panel"],
+      "hazards": ["damp_floor", "mildew"],
+      "ambientSounds": ["dripping_water", "creaking_pipes"],
+      "ambientSmells": ["stagnant_water", "mildew", "rust"]
+    },
+    "exits": {
+      "north": {
+        "to": "ROOM_010",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You head back north to the Utility Corridor."
+      }
+    },
+    "objects": [
+      {
+        "id": "manual_pump_assembly",
+        "name": "manual pump assembly",
+        "synonyms": ["pump", "pump assembly", "manual pump", "controls"],
+        "description": "A large manual pump assembly with jammed controls.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The pump assembly is a robust mechanical system designed to manually control water and coolant flow throughout the facility. The controls are currently jammed—the wheel won't turn and several components appear seized from corrosion. A socket where the pump control handle should be inserted is empty. With the handle installed, you might be able to force the mechanism to operate."
+      },
+      {
+        "id": "water_stains",
+        "name": "water stains",
+        "synonyms": ["stains", "flood marks", "watermarks"],
+        "description": "Dark water stains climbing the walls.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The water stains reach about four feet up the walls, indicating the room was completely flooded at one point. The stains are dark and irregular, suggesting the water was contaminated or mixed with other fluids. Judging by the dryness now, the flooding occurred some time ago and has since drained."
+      },
+      {
+        "id": "pump_control_handle",
+        "name": "pump control handle",
+        "synonyms": ["handle", "control handle", "pump handle", "crank"],
+        "description": "A detached pump control handle.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A heavy metal handle designed to fit into the manual pump assembly. It's T-shaped with a long shaft and a perpendicular grip. The handle appears to have been deliberately removed—the connection point is clean, not broken. Someone may have disabled the pump intentionally."
+      },
+      {
+        "id": "damp_floor",
+        "name": "damp floor",
+        "synonyms": ["floor", "wet floor", "puddles"],
+        "description": "The damp floor with standing water in low spots.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The floor is still damp, with small puddles collecting in low spots and cracks. The water appears to be seeping up from below or condensing from the humid air. The dampness has promoted rust and corrosion on all metal surfaces."
+      },
+      {
+        "id": "mildew_growth",
+        "name": "mildew",
+        "synonyms": ["mold", "fungus", "growth"],
+        "description": "Mildew growing on the walls and corners.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Dark patches of mildew have grown in the corners and along the water-stained walls. The humid environment and standing water have created ideal conditions for fungal growth. The smell is unpleasant but not immediately dangerous."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": []
+    },
+    "meta": {
+      "mapCoordinates": { "x": -2, "y": 1, "z": -3 },
+      "designerNotes": "Pump control room south of Utility Corridor. Contains pump control handle (takeable item). Evidence of past flooding. Pump assembly could be puzzle element if handle is reattached."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_013",
+      "canonicalName": "Maintenance Crawlspace",
+      "aliases": ["maintenance crawlspace", "crawlspace", "maintenance area"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "You crouch into a tight crawlspace filled with exposed wiring and sharp metal edges. Heat builds quickly here, and occasional sparks jump between damaged cables.\n\nAn insulated toolkit lies abandoned near a junction box.\n\nThe only way out is back east.",
+      "long": "This cramped maintenance crawlspace is barely large enough to move through in a crouch. The walls are lined with exposed electrical wiring, fiber optic cables, and coolant pipes—all tangled together in a chaotic web. Sharp metal edges protrude from hastily cut access panels.\n\nThe air is hot and stifling, made worse by the heat radiating from damaged power cables. Occasionally, sparks jump between exposed wires, casting brief flashes of light in the confined space.\n\nAn insulated toolkit has been left near a junction box, abandoned by whoever was working here last.\n\nThe only exit is back east through the low opening.",
+      "short": "You are in the maintenance crawlspace.",
+      "visited": "You're back in the tight, hot maintenance crawlspace. Sparks occasionally jump between damaged cables.",
+      "dark": "The maintenance crawlspace is pitch black. You can feel heat radiating from damaged cables and occasionally see sparks in the darkness.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "metal_crawlspace",
+      "features": ["exposed_wiring", "junction_box", "coolant_pipes", "access_panels"],
+      "hazards": ["electrical_sparks", "sharp_edges", "extreme_heat", "confined_space"],
+      "ambientSounds": ["electrical_crackling", "buzzing", "cable_hum"],
+      "ambientSmells": ["ozone", "burnt_plastic", "hot_metal"]
+    },
+    "exits": {
+      "east": {
+        "to": "ROOM_010",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You crawl back through the low opening to the Utility Corridor."
+      }
+    },
+    "objects": [
+      {
+        "id": "exposed_wiring",
+        "name": "exposed wiring",
+        "synonyms": ["wiring", "wires", "cables", "electrical cables"],
+        "description": "Tangled exposed electrical wiring lining the walls.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A chaotic tangle of electrical wiring runs along every surface. Many of the protective conduits have been removed or damaged, leaving bare wires exposed. Some cables still carry current, evidenced by the occasional sparks and the heat they radiate. Touching them would be extremely dangerous."
+      },
+      {
+        "id": "junction_box",
+        "name": "junction box",
+        "synonyms": ["box", "electrical box", "control box"],
+        "description": "An electrical junction box near the toolkit.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A large junction box where multiple electrical circuits converge. The cover has been removed, revealing a complex array of connections, circuit breakers, and relays. Several circuits appear to have blown, their breakers tripped or burned out. Someone was clearly working on repairs before abandoning the job."
+      },
+      {
+        "id": "insulated_toolkit",
+        "name": "insulated toolkit",
+        "synonyms": ["toolkit", "tools", "tool kit", "insulated tools"],
+        "description": "An abandoned insulated toolkit near the junction box.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": true,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A professional electrician's toolkit with rubber-insulated handles designed for working with live circuits. It contains screwdrivers, wire strippers, pliers, and a voltage tester. The tools are high-quality and well-maintained. Whoever left this behind must have departed in a hurry—these tools would be valuable for electrical work throughout the facility."
+      },
+      {
+        "id": "sharp_edges",
+        "name": "sharp metal edges",
+        "synonyms": ["edges", "sharp edges", "metal edges", "cut panels"],
+        "description": "Sharp metal edges from hastily cut access panels.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The access panels have been cut or torn open, leaving jagged metal edges protruding into the already cramped space. Moving through here requires careful attention to avoid cuts and scrapes. The cuts appear hasty, as if made during an emergency."
+      },
+      {
+        "id": "damaged_cables",
+        "name": "damaged cables",
+        "synonyms": ["cables", "sparking cables", "power cables"],
+        "description": "Damaged power cables that occasionally spark.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Several thick power cables have damaged insulation, exposing the conductors beneath. They still carry electrical current, creating occasional arcs and sparks when they touch each other or nearby metal surfaces. The sparks are bright and accompanied by sharp cracking sounds. The heat from these cables makes the crawlspace uncomfortably hot."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": []
+    },
+    "meta": {
+      "mapCoordinates": { "x": -3, "y": 2, "z": -3 },
+      "designerNotes": "Dangerous maintenance crawlspace west of Utility Corridor. Contains insulated toolkit (takeable, useful for electrical work). Multiple hazards including sparks, heat, and sharp edges. Confined space with single exit."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_014",
+      "canonicalName": "Command Corridor",
+      "aliases": ["command corridor", "corridor", "command hallway"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "This long corridor leads toward the station's command and control systems. Wall-mounted displays flicker with static, showing fragmented status readouts.\n\nTo the east lies an observation deck.\nTo the north, heavy doors guard the anchor systems.\nThe Central Hub lies south.",
+      "long": "The corridor stretches north-south, its walls lined with wall-mounted displays that flicker intermittently with static. The displays show fragmented status readouts—temperature sensors, power levels, atmospheric composition—all incomplete and corrupted.\n\nThe ceiling is higher here than in other sections, and reinforced support beams run overhead. This corridor clearly leads to critical command infrastructure.\n\nTo the east, a doorway opens onto an observation deck. To the north, massive reinforced doors mark the entrance to the anchor systems control area. South leads back to the Central Hub.",
+      "short": "You are in the Command Corridor.",
+      "visited": "You're back in the Command Corridor. Flickering displays show fragmented readouts.",
+      "dark": "The Command Corridor is dark, illuminated only by the flickering glow of malfunctioning displays.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "reinforced_corridor",
+      "features": ["wall_displays", "support_beams", "high_ceiling", "reinforced_doors"],
+      "hazards": [],
+      "ambientSounds": ["display_static", "electrical_buzzing", "distant_mechanical_hum"],
+      "ambientSmells": ["ozone", "stale_air", "electronics"]
+    },
+    "exits": {
+      "south": {
+        "to": "ROOM_005",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You head south back to the Central Hub."
+      },
+      "east": {
+        "to": "ROOM_015",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You step through the doorway onto the observation deck."
+      },
+      "north": {
+        "to": "ROOM_016",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "The heavy doors hiss open with a release of pressurized air. You step into the antechamber beyond."
+      }
+    },
+    "objects": [
+      {
+        "id": "wall_displays",
+        "name": "wall-mounted displays",
+        "synonyms": ["displays", "wall displays", "screens", "monitors"],
+        "description": "Flickering wall-mounted displays showing fragmented status readouts.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A series of flat-panel displays mounted along the corridor walls. They flicker erratically, cycling through various status screens: temperature readings, power distribution graphs, atmospheric composition data. Most of the information is corrupted or incomplete, but you can make out fragments: 'MAIN POWER: 34%', 'LIFE SUPPORT: NOMINAL', 'ANCHOR SYSTEM: [DATA CORRUPTED]'."
+      },
+      {
+        "id": "support_beams",
+        "name": "support beams",
+        "synonyms": ["beams", "reinforced beams", "ceiling beams", "structural supports"],
+        "description": "Reinforced support beams running overhead.",
+        "initialLocation": "room",
+        "visibility": "conditional",
+        "requiresLight": true,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Massive steel I-beams reinforced with additional plating. They're built to withstand tremendous stress—far more than typical structural supports. This section of the facility must house critical systems that can't afford structural failure."
+      },
+      {
+        "id": "reinforced_doors_north",
+        "name": "heavy doors",
+        "synonyms": ["reinforced doors", "doors", "north doors", "anchor doors", "massive doors"],
+        "description": "Massive reinforced doors to the north.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Enormous reinforced doors, each at least three meters tall and half a meter thick. A complex locking mechanism with biometric scanners and authorization panels guards the entrance. The doors are marked with yellow and black hazard stripes and a warning: 'ANCHOR CONTROL - LEVEL 4 CLEARANCE REQUIRED - UNAUTHORIZED ACCESS PROHIBITED'. Whatever lies beyond is clearly critical to the station's operation."
+      },
+      {
+        "id": "observation_deck_door",
+        "name": "observation deck entrance",
+        "synonyms": ["east door", "door east", "observation door", "deck entrance"],
+        "description": "A doorway to the east leading to an observation deck.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "A standard door with a small rectangular window set at eye level. Through it, you can glimpse what appears to be an observation deck or viewing area, though details are hard to make out from here."
+      },
+      {
+        "id": "status_readouts",
+        "name": "status readouts",
+        "synonyms": ["readouts", "status data", "data", "information"],
+        "description": "Fragmented status information on the displays.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The status readouts cycle through various metrics. You can make out fragments: power at 34% capacity, life support systems nominal, multiple sections showing 'offline' or 'error' status. The anchor system data is completely corrupted, displaying only garbled symbols and error messages."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": ["observation_deck", "anchor_control"]
+    },
+    "meta": {
+      "mapCoordinates": { "x": 0, "y": 3, "z": -3 },
+      "designerNotes": "Command Corridor connecting Central Hub to critical systems. North leads to anchor control (future area), east to observation deck (future area). Wall displays provide world-building information about station status. High-security area with reinforced construction."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_015",
+      "canonicalName": "Observation Deck",
+      "aliases": ["observation deck", "deck", "observation area", "viewing deck"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "A reinforced window looks down over lower sections of the station, now dark and silent. A command console near the glass still functions intermittently.\n\nAccessing the console reveals stored logs containing a command console access code.\n\nThe corridor lies west.",
+      "long": "The observation deck extends along the eastern wall, dominated by a massive reinforced viewport. Through the thick glass, you can see lower sections of the facility—dark chambers, silent corridors, and motionless machinery stretching into the depths below.\n\nA command console is mounted on a pedestal near the window. Its screen flickers with power fluctuations but remains partially functional. The console appears to have access to station logs and security systems.\n\nThe viewport itself is impressive—easily four meters wide and extending from floor to ceiling. Emergency shutters are retracted into the ceiling, suggesting this observation point was designed for monitoring critical operations below.\n\nThe corridor lies west through the doorway.",
+      "short": "You are on the observation deck.",
+      "visited": "You're back on the observation deck. The dark station sections stretch below the viewport.",
+      "dark": "The observation deck is dark. The viewport shows only blackness, and the command console's flickering screen provides minimal light.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "metal_deck",
+      "features": ["reinforced_viewport", "command_console", "observation_platform"],
+      "hazards": [],
+      "ambientSounds": ["console_beeping", "electrical_hum", "distant_echoes"],
+      "ambientSmells": ["recycled_air", "electronics", "metal"]
+    },
+    "exits": {
+      "west": {
+        "to": "ROOM_014",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You step back into the Command Corridor."
+      }
+    },
+    "objects": [
+      {
+        "id": "reinforced_viewport",
+        "name": "reinforced window",
+        "synonyms": ["viewport", "window", "glass", "reinforced glass", "observation window"],
+        "description": "A massive reinforced viewport looking down over the station.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The viewport is constructed from multiple layers of reinforced transparent material—likely a composite of glass and polymers designed to withstand tremendous pressure. It's at least ten centimeters thick.\n\nThrough it, you can see the lower levels of the facility spread out below. Everything is dark and motionless. You can make out the shapes of large machinery, corridor networks, and what might be manufacturing or processing facilities. The scale is immense—the station extends far deeper than you initially realized."
+      },
+      {
+        "id": "command_console",
+        "name": "command console",
+        "synonyms": ["console", "terminal", "computer", "station console"],
+        "description": "A functioning command console near the viewport.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The command console is built into a waist-height pedestal. Its screen flickers but remains readable. The interface shows multiple menu options: STATION LOGS, SECURITY PROTOCOLS, ENVIRONMENTAL CONTROLS, POWER DISTRIBUTION.\n\nYou access the stored logs. Most are corrupted or incomplete, but one entry catches your attention:\n\n[LOG ENTRY 2847-B]\nDate: [CORRUPTED]\nAuthor: Chief Engineer Voss\n\nAnchor system showing anomalous readings. Preparing emergency shutdown protocols. Access code for command override: EPSILON-7-THETA.\n\n[END LOG]\n\nThe access code EPSILON-7-THETA might be useful for accessing secured systems.",
+        "stateChanges": {
+          "ability_learned": "access_code_epsilon"
+        }
+      },
+      {
+        "id": "emergency_shutters",
+        "name": "emergency shutters",
+        "synonyms": ["shutters", "viewport shutters", "protective shutters"],
+        "description": "Retracted emergency shutters above the viewport.",
+        "initialLocation": "room",
+        "visibility": "conditional",
+        "requiresLight": true,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Heavy armored shutters designed to seal the viewport in case of emergency. They're currently retracted into housings in the ceiling. The deployment mechanism appears to be controlled by the command console or automatic safety systems."
+      },
+      {
+        "id": "observation_platform",
+        "name": "observation platform",
+        "synonyms": ["platform", "deck", "viewing platform"],
+        "description": "The deck platform extending along the viewport.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The platform is constructed from reinforced metal grating. It's designed to accommodate multiple observers, with space for at least a dozen people to view the lower sections simultaneously. Mounting points along the edge suggest instrument stations or monitoring equipment was once installed here."
+      },
+      {
+        "id": "lower_sections_view",
+        "name": "lower sections",
+        "synonyms": ["lower levels", "depths", "dark sections", "facility below"],
+        "description": "The dark lower sections of the station visible through the viewport.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "Peering down through the viewport reveals a vast complex of facilities below your current level. You can make out what appears to be:\n\n- A large processing facility with massive tanks and pipework\n- Multiple levels of corridors and chambers\n- What might be docking bays or cargo handling areas\n- Enormous machinery of unknown purpose\n\nAll of it is dark and silent. No lights, no movement, no signs of activity. The sight is both impressive and deeply unsettling—this station is far larger than you initially realized, and whatever happened here affected all of it."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": false,
+      "unlocksRegions": []
+    },
+    "meta": {
+      "mapCoordinates": { "x": 1, "y": 3, "z": -3 },
+      "designerNotes": "Observation deck east of Command Corridor. Provides view of lower station sections for world-building. Command console grants access code (ability_learned: access_code_epsilon) via examination. Code may be used for future puzzle/access requirements."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_016",
+      "canonicalName": "Anchor Antechamber",
+      "aliases": ["anchor antechamber", "antechamber", "anchor entrance"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "The air vibrates faintly here, and your thoughts feel unnaturally close, as if echoing back at you. Strange geometric patterns are etched into the walls, distinct from the rest of the station's architecture.\n\nA locked interface blocks the path forward, requiring an anchor interface key.\n\nThe Command Corridor lies south.\nThe Anchor Chamber is north.",
+      "long": "This antechamber serves as a threshold between the station's normal sections and something far more unusual. The air itself feels different here—charged with an almost imperceptible vibration that makes your teeth ache and your thoughts feel unnaturally sharp.\n\nThe walls are covered in strange geometric patterns etched deep into the metal. Unlike the utilitarian architecture of the rest of the facility, these patterns seem deliberately designed—precise angles, interlocking shapes, and symbols that hurt to look at directly. They're reminiscent of circuit diagrams, but far more complex and somehow organic.\n\nA sophisticated interface is mounted beside the north door, its screen displaying a prompt for an anchor interface key. The security here is far more advanced than simple keycards—whatever lies beyond must be critically important.\n\nTo the south, the heavy doors lead back to the Command Corridor. To the north, an even more massive door awaits, sealed until the proper authorization is provided.",
+      "short": "You are in the Anchor Antechamber.",
+      "visited": "You're back in the Anchor Antechamber. The air vibrates faintly, and geometric patterns cover the walls.",
+      "dark": "The antechamber is dark, but the interface screen and the geometric patterns seem to emit a faint, unsettling glow.",
+      "dynamicVariants": {}
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": true
+      }
+    },
+    "environment": {
+      "terrain": "reinforced_floor",
+      "features": ["geometric_patterns", "security_interface", "reinforced_architecture"],
+      "hazards": ["reality_distortion", "psionic_resonance"],
+      "ambientSounds": ["low_frequency_hum", "reality_vibration", "psionic_whispers"],
+      "ambientSmells": ["ozone", "metallic_tang", "something_wrong"]
+    },
+    "exits": {
+      "south": {
+        "to": "ROOM_014",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You step back through the heavy doors to the Command Corridor."
+      },
+      "north": {
+        "to": "ROOM_017",
+        "visible": true,
+        "oneWay": false,
+        "requires": {
+          "type": "item",
+          "id": "anchor_interface_key",
+          "value": 1
+        },
+        "blockedMessage": "The interface displays: 'ANCHOR INTERFACE KEY REQUIRED - UNAUTHORIZED ACCESS FORBIDDEN'. The door remains sealed.",
+        "travelText": "You insert the anchor interface key. The massive door retracts into the walls with a deep rumble, revealing the chamber beyond."
+      }
+    },
+    "objects": [
+      {
+        "id": "geometric_patterns",
+        "name": "geometric patterns",
+        "synonyms": ["patterns", "etchings", "symbols", "geometric etchings", "wall patterns"],
+        "description": "Strange geometric patterns etched into the walls.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The patterns are deeply etched into the metal walls, forming intricate networks of interconnected geometric shapes. Lines intersect at precise angles, creating forms that seem to shift and change when viewed from different positions.\n\nSome patterns resemble mathematical diagrams or circuit layouts, while others are completely alien—organic curves that shouldn't fit with the angular geometry, yet somehow do. Looking at them too long causes a sensation like vertigo, as if the patterns are pulling your perception into dimensions you can't quite comprehend.\n\nYou have the unsettling feeling that these aren't merely decorative. They serve some function related to the anchor systems beyond."
+      },
+      {
+        "id": "security_interface",
+        "name": "locked interface",
+        "synonyms": ["interface", "security interface", "door interface", "terminal", "access terminal"],
+        "description": "A sophisticated interface controlling access to the Anchor Chamber.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The interface is far more advanced than the card readers elsewhere in the facility. A high-resolution display shows a complex authorization screen with biometric scanners, encrypted data fields, and what appears to be quantum security protocols.\n\nThe screen reads:\n\nANCHOR CONTROL SYSTEM\nSECURITY LEVEL: MAXIMUM\nAUTHORIZATION REQUIRED\n\nINSERT ANCHOR INTERFACE KEY\nBIOMETRIC SCAN: [PENDING]\nQUANTUM VERIFICATION: [PENDING]\n\nWARNING: Unauthorized access attempts will trigger containment protocols.\n\nWhatever lies beyond this door, the station's designers went to extraordinary lengths to protect it."
+      },
+      {
+        "id": "north_door",
+        "name": "anchor chamber door",
+        "synonyms": ["north door", "massive door", "anchor door", "sealed door"],
+        "description": "A massive sealed door leading to the Anchor Chamber.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The door is absolutely massive—at least five meters tall and constructed from what appears to be multiple layers of reinforced materials. The surface shows no seams or obvious mechanical components; it must be designed to retract into the walls when opened.\n\nThe door is marked with hazard warnings and technical specifications:\n\nANCHOR CONTROL ACCESS\nCLEARANCE LEVEL 5 REQUIRED\nRADIATION SHIELDING: ACTIVE\nREALITY STABILIZATION: ACTIVE\nCONTAINMENT FIELDS: STANDBY\n\nThe warnings suggest that whatever is beyond this door involves forces far beyond conventional technology."
+      },
+      {
+        "id": "air_vibration",
+        "name": "vibration",
+        "synonyms": ["air vibration", "humming", "resonance", "psionic effect"],
+        "description": "The subtle vibration permeating the air.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The vibration isn't just physical—it's affecting your perception on a deeper level. Your thoughts feel amplified, echoing strangely as if bouncing off invisible surfaces. Colors seem slightly more vivid, sounds have unusual resonance, and you have the distinct impression that reality is somehow thinner here.\n\nThis must be a side effect of the anchor systems. Whatever they do, they're powerful enough to warp space or perception even through multiple layers of shielding."
+      },
+      {
+        "id": "reinforced_architecture",
+        "name": "reinforced walls",
+        "synonyms": ["walls", "reinforced structure", "architecture", "construction"],
+        "description": "The heavily reinforced construction of the antechamber.",
+        "initialLocation": "room",
+        "visibility": "conditional",
+        "requiresLight": true,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The walls here are far thicker than elsewhere in the facility—at least half a meter of composite armor and shielding materials. You can see layers of different substances: dense metals, radiation-absorbing materials, and what might be exotic matter designed to contain energies that conventional materials cannot.\n\nThis antechamber is built like a containment vessel, designed to isolate whatever lies beyond from the rest of the station."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {},
+    "progression": {
+      "requiredForCompletion": true,
+      "unlocksRegions": ["anchor_chamber"]
+    },
+    "meta": {
+      "mapCoordinates": { "x": 0, "y": 4, "z": -3 },
+      "designerNotes": "Anchor Antechamber north of Command Corridor. Gateway to Anchor Chamber (endgame area). Requires anchor_interface_key item to proceed north. Strange psionic/reality-warping effects, geometric patterns suggesting advanced technology. High-security containment architecture. Critical progression room."
+    }
+  },
+  {
+    "identity": {
+      "id": "ROOM_017",
+      "canonicalName": "Anchor Chamber — ANCHOR 1",
+      "aliases": ["anchor chamber", "chamber", "anchor 1", "anchor room"],
+      "region": "Research Bunker",
+      "zone": "Sublevel 3"
+    },
+    "descriptions": {
+      "initial": "At the center of this vast chamber stands the anchor itself — a towering construct of metal and crystalline elements humming with restrained power. The energy in the room warps light and sound, bending perception.\n\nThis device stabilizes the station and suppresses the distortions that plague it. Activating it will permanently change the state of the facility and unlock access to the outside world.\n\nThe only exit lies south, back through the antechamber.",
+      "long": "The Anchor Chamber is a vast circular space, easily fifty meters in diameter and twice as tall. At its center rises the anchor itself—a towering construct that defies simple description.\n\nThe anchor consists of multiple rotating rings of exotic metals, each inscribed with the same geometric patterns you saw in the antechamber. Between the rings float crystalline structures that pulse with inner light, shifting through colors that don't quite exist in normal spectrum. The entire assembly hums with barely contained power, a sound you feel in your bones more than hear.\n\nThe energy field around the anchor distorts space itself. Light bends at strange angles, sounds echo in impossible ways, and your perception constantly shifts as if reality is struggling to maintain coherence near the device. This is clearly technology far beyond conventional understanding—perhaps reverse-engineered from something not originally human.\n\nControl interfaces surround the anchor's base, displaying incomprehensible data streams and energy readings. The station's designers built this entire facility around this single device. Whatever the anchor does, it's absolutely critical to the station's operation.\n\nThe only exit is south, back to the antechamber.",
+      "short": "You are in the Anchor Chamber.",
+      "visited": "You're back in the Anchor Chamber. The anchor towers at the center, warping reality around it.",
+      "dark": "Even in darkness, the anchor glows with its own internal light, pulsing crystals casting impossible shadows.",
+      "dynamicVariants": {
+        "anchor_activated": "The anchor hums at full power now, its energy field stabilized and controlled. The reality distortions have lessened significantly, and you can feel the change throughout the station—as if a great pressure has been lifted. The air feels cleaner, more stable. Whatever nightmare plagued this place, the anchor is holding it at bay."
+      }
+    },
+    "lighting": {
+      "isLit": true,
+      "lightSourcesAllowed": true,
+      "darknessBehavior": {
+        "grueEnabled": false,
+        "suppressExits": false,
+        "suppressObjects": false
+      }
+    },
+    "environment": {
+      "terrain": "specialized_chamber",
+      "features": ["anchor_device", "control_interfaces", "energy_field", "crystalline_structures"],
+      "hazards": ["reality_distortion", "energy_field", "psionic_overload"],
+      "ambientSounds": ["deep_resonance", "crystal_harmonics", "reality_warping", "energy_hum"],
+      "ambientSmells": ["ozone", "ionized_air", "something_alien"]
+    },
+    "exits": {
+      "south": {
+        "to": "ROOM_016",
+        "visible": true,
+        "oneWay": false,
+        "requires": null,
+        "blockedMessage": null,
+        "travelText": "You step back through the massive doorway to the antechamber."
+      }
+    },
+    "objects": [
+      {
+        "id": "anchor_device",
+        "name": "anchor",
+        "synonyms": ["anchor device", "construct", "anchor construct", "device", "anchor 1"],
+        "description": "The towering anchor construct at the center of the chamber.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The anchor is a masterpiece of advanced engineering—or perhaps something more than engineering. Standing at least twenty meters tall, it consists of concentric rings of metal alloy that slowly rotate around a central core.\n\nWithin the rings, crystalline structures float unsupported, defying gravity as they pulse with light. The crystals seem to exist in a state between solid and energy, their edges simultaneously sharp and diffuse. Mathematical precision combines with organic growth patterns in ways that shouldn't be possible.\n\nThe entire device generates a powerful field that you can feel pressing against your mind. It's actively working to stabilize reality in this region of space, suppressing some kind of distortion or incursion. Without it, whatever nightmare lurks beyond would break through.\n\nThis is what the entire research bunker was built to house and protect. This is Anchor 1—the first and perhaps most critical of the reality stabilization systems.",
+        "stateChanges": {
+          "ability_learned": "anchor_knowledge"
+        }
+      },
+      {
+        "id": "control_interfaces",
+        "name": "control interfaces",
+        "synonyms": ["controls", "interfaces", "terminals", "control panels", "console"],
+        "description": "Control interfaces surrounding the anchor's base.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The control interfaces are arranged in a circle around the anchor's base platform. Each station displays streams of data—energy levels, dimensional stability readings, quantum flux measurements, and parameters you can't even begin to understand.\n\nMost screens show nominal readings, but several indicate errors or degraded performance. The anchor is functioning, but not at full capacity. Multiple subsystems show 'OFFLINE' or 'DEGRADED' status.\n\nOne primary control terminal appears to be the main activation interface. It displays:\n\nANCHOR 1 STATUS: STANDBY\nREALITY STABILIZATION: 67%\nENERGY OUTPUT: MINIMAL\nCONTAINMENT FIELD: PARTIAL\n\nACTIVATION SEQUENCE: AVAILABLE\nWARNING: Full activation will draw massive power from station reserves.\nWARNING: Reality distortions will be suppressed within anchor radius.\nWARNING: External communications may become available upon stabilization.\n\nA prominent button labeled 'INITIATE FULL ACTIVATION' awaits input."
+      },
+      {
+        "id": "crystalline_structures",
+        "name": "crystalline structures",
+        "synonyms": ["crystals", "floating crystals", "crystal structures", "pulsing crystals"],
+        "description": "Floating crystalline structures within the anchor rings.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The crystals defy conventional physics. They float within the rotating rings without any visible support, slowly orbiting the central core in patterns that seem choreographed yet natural.\n\nEach crystal pulses with internal light, cycling through colors that your mind struggles to process—hues that seem to exist between known wavelengths. When you focus on one, it appears solid and geometric. When you look away, you could swear it was fluid and organic.\n\nThese aren't natural crystals. They might not even be made of normal matter. They could be condensed energy, stabilized exotic particles, or fragments of something from beyond normal spacetime. Whatever they are, they're the anchor's power source—or perhaps its connection to whatever dimension it's holding at bay."
+      },
+      {
+        "id": "energy_field",
+        "name": "energy field",
+        "synonyms": ["field", "distortion field", "reality field", "warping effect"],
+        "description": "The powerful energy field surrounding the anchor.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The energy field is invisible but impossible to ignore. It presses against your consciousness, creating sensations that blend physical and mental:\n\nYour thoughts feel sharp and clear, yet also distant, as if thinking through a prism. Light bends around the anchor in subtle ways—straight lines appear curved, distances seem to shift. Sounds arrive with strange delays or reverberations that don't match the chamber's acoustics.\n\nThe field is doing something to local spacetime, bending or stabilizing it against some external force. You can feel that force now—a pressure from outside reality, something trying to push through. The anchor holds it back, maintaining the integrity of normal space within its radius of influence.\n\nIf the anchor failed, that pressure would break through. You don't want to imagine what would happen then."
+      },
+      {
+        "id": "chamber_walls",
+        "name": "chamber walls",
+        "synonyms": ["walls", "circular walls", "chamber structure"],
+        "description": "The massive circular walls of the Anchor Chamber.",
+        "initialLocation": "room",
+        "visibility": "conditional",
+        "requiresLight": true,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The chamber walls are constructed from the same composite materials as the antechamber, but even thicker—possibly several meters of layered shielding. The geometric patterns from the antechamber continue here, covering every surface in intricate designs.\n\nThe patterns seem to serve a functional purpose, perhaps as part of the containment system. They might channel or redirect the anchor's energy, or help stabilize reality within the chamber. Looking at them for too long still causes that unsettling vertigo, as if they're pulling your perception into higher dimensions."
+      },
+      {
+        "id": "activation_terminal",
+        "name": "activation terminal",
+        "synonyms": ["terminal", "main terminal", "primary console", "activation console"],
+        "description": "The primary activation terminal for the anchor.",
+        "initialLocation": "room",
+        "visibility": "always",
+        "requiresLight": false,
+        "takeable": false,
+        "taken": false,
+        "interactable": true,
+        "examineText": "The activation terminal stands prominently among the control interfaces. Its display shows the anchor's current status and the option to initiate full activation.\n\nThe screen provides details:\n\nFULL ACTIVATION PROTOCOL\n- Draws maximum power from station reserves\n- Establishes complete reality stabilization field\n- Suppresses all dimensional incursions within anchor radius\n- Enables external communication systems\n- PERMANENT EFFECT - cannot be reversed without full shutdown\n\nThe 'INITIATE FULL ACTIVATION' button pulses invitingly. This is the moment of decision—activating the anchor will fundamentally change the station's state and potentially complete your primary objective."
+      }
+    ],
+    "npcs": [],
+    "state": {
+      "visited": false,
+      "anchor_activated": false
+    },
+    "hooks": {
+      "onEnter": [],
+      "onExit": [],
+      "onLook": []
+    },
+    "specialVerbs": {
+      "activate": {
+        "aliases": ["activate anchor", "activate device", "initiate activation", "full activation"],
+        "targetId": "activation_terminal",
+        "description": "Activates the anchor to full power.",
+        "successMessage": "You press the INITIATE FULL ACTIVATION button. The anchor responds immediately.\n\nThe rotating rings accelerate, the crystals pulse with blinding intensity, and the energy field expands outward in a wave of stabilizing force. Reality seems to snap into sharp focus as the anchor reaches full power.\n\nThroughout the station, you hear distant sounds—systems powering up, doors unsealing, atmospheric processors engaging. The oppressive wrongness that permeated the facility dissipates like fog in sunlight.\n\nThe anchor is now fully operational. Whatever nightmare threatened this place is being held at bay. External communications are coming online. The way forward is open.",
+        "failureMessage": "The activation sequence is already complete.",
+        "stateChanges": {
+          "anchor_activated": true
+        },
+        "requires": {
+          "state": "anchor_activated",
+          "value": false
+        }
+      }
+    },
+    "progression": {
+      "requiredForCompletion": true,
+      "unlocksRegions": ["station_exterior", "lower_levels"]
+    },
+    "meta": {
+      "mapCoordinates": { "x": 0, "y": 5, "z": -3 },
+      "designerNotes": "Anchor Chamber - primary endgame location containing Anchor 1 device. Critical story/progression room. Contains special 'activate' verb to trigger anchor activation (changes state, unlocks regions, completes major objective). Reality-warping effects, advanced technology, crystalline power sources. Examining anchor grants anchor_knowledge ability. Dynamic description changes after activation. This is the culmination of the player's journey through the facility."
+    }
+  }
+]

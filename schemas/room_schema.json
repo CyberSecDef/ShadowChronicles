@@ -1,0 +1,164 @@
+{
+  "room": {
+    "identity": {
+      "id": "ROOM_001",
+      "canonical_name": "Reservoir South",
+      "aliases": ["south of the reservoir", "southern reservoir room"],
+      "region": "Great Underground Empire",
+      "zone": "Reservoir Complex"
+    },
+
+    "descriptions": {
+      "initial": "You are in a long room to the south of what was once a reservoir. Moisture glistens on the stone walls.",
+      "long": "The room stretches east to west, its stone walls damp and cold. A steep path climbs along the cliff face, while a dark passage heads south.",
+      "short": "You are south of the reservoir.",
+      "visited": "You are back in the long room south of the reservoir.",
+      "dark": "It is pitch black. You are likely to be eaten by a troll.",
+      "dynamic_variants": {
+        "flooded": "Water now fills the lower half of the room, swirling slowly toward the south passage.",
+        "collapsed": "A pile of rubble blocks part of the room where the cliff once stood."
+      }
+    },
+
+    "lighting": {
+      "is_lit": false,
+      "light_sources_allowed": true,
+      "darkness_behavior": {
+        "grue_enabled": true,
+        "suppress_exits": true,
+        "suppress_objects": true
+      }
+    },
+
+    "environment": {
+      "terrain": "stone",
+      "features": ["cliff", "damp_walls"],
+      "hazards": ["slippery_floor"],
+      "ambient_sounds": ["dripping_water"],
+      "ambient_smells": ["stagnant_water"]
+    },
+
+    "exits": {
+      "north": {
+        "to": "ROOM_002",
+        "visible": true,
+        "one_way": false,
+        "requires": null,
+        "blocked_message": null,
+        "travel_text": "You head north toward the remains of the reservoir."
+      },
+      "south": {
+        "to": "ROOM_003",
+        "visible": true,
+        "one_way": false,
+        "requires": null,
+        "blocked_message": null,
+        "travel_text": "You move south into the passageway."
+      },
+      "west": {
+        "to": "ROOM_004",
+        "visible": true,
+        "one_way": false,
+        "requires": {
+          "type": "state",
+          "id": "rubble_cleared"
+        },
+        "blocked_message": "Rubble blocks the western exit.",
+        "travel_text": "You squeeze past the rocks and head west."
+      },
+      "up": {
+        "to": "ROOM_005",
+        "visible": true,
+        "one_way": false,
+        "requires": {
+          "type": "item",
+          "id": "rope"
+        },
+        "blocked_message": "The cliff is too steep to climb without assistance.",
+        "travel_text": "You climb the steep path upward."
+      }
+    },
+
+    "objects": [
+      {
+        "id": "brass_lantern",
+        "initial_location": "room",
+        "visibility": "conditional",
+        "requires_light": false,
+        "affects_room": {
+          "lighting": true
+        }
+      },
+      {
+        "id": "stone_debris",
+        "initial_location": "room",
+        "visibility": "always",
+        "interactable": true,
+        "state_changes": {
+          "on_clear": "rubble_cleared"
+        }
+      }
+    ],
+
+    "npcs": [
+      {
+        "id": "grue",
+        "spawn_conditions": ["darkness"],
+        "behavior": "attack_if_dark",
+        "despawn_conditions": ["light_present"]
+      }
+    ],
+
+    "state": {
+      "visited": false,
+      "flooded": false,
+      "rubble_cleared": false,
+      "special_event_triggered": false
+    },
+
+    "hooks": {
+      "on_enter": [
+        {
+          "condition": "darkness",
+          "action": "check_grue_attack"
+        }
+      ],
+      "on_exit": [
+        {
+          "condition": "carrying_heavy_object",
+          "action": "slip_check"
+        }
+      ],
+      "on_look": [
+        {
+          "condition": "flooded",
+          "action": "use_flooded_description"
+        }
+      ]
+    },
+
+    "special_verbs": {
+      "dive": {
+        "requires": "flooded",
+        "effect": "enter_underwater_room",
+        "failure_message": "There is nothing here to dive into."
+      },
+      "climb": {
+        "requires": "rope",
+        "effect": "use_up_exit",
+        "failure_message": "The cliff is too steep."
+      }
+    },
+
+    "progression": {
+      "required_for_completion": false,
+      "unlocks_regions": [],
+      "shortcut_created": "ROOM_004"
+    },
+
+    "meta": {
+      "map_coordinates": { "x": 12, "y": -4, "z": -1 },
+      "designer_notes": "Classic transitional room with vertical gating."
+    }
+  }
+}

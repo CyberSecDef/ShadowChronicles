@@ -1,0 +1,40 @@
+import type { Room, PlayerState, GameConfig } from '../types/index.js';
+import type { GameSession, CommandResult } from '../types/index.js';
+export declare class GameEngine {
+    private rooms;
+    private config;
+    private parser;
+    private worldState;
+    constructor(config?: Partial<GameConfig>);
+    loadRooms(roomData: Room[]): Promise<void>;
+    createNewPlayer(name: string, startingRoom: string): PlayerState;
+    getRoom(roomId: string): Room | undefined;
+    getCurrentRoom(session: GameSession): Room | undefined;
+    processCommand(session: GameSession, input: string): Promise<CommandResult>;
+    getRoomDescription(room: Room, player: PlayerState, verbose?: boolean): string;
+    private hasLight;
+    private checkNpcSpawnConditions;
+    private canUseExit;
+    private handleLook;
+    private handleGo;
+    private handleTake;
+    private handleDrop;
+    private handleExamine;
+    private handleInventory;
+    private handleUse;
+    private handleTurn;
+    private handleLight;
+    private handleExtinguish;
+    private handleOpen;
+    private handleClose;
+    private handleAttack;
+    private handleCast;
+    private handleRest;
+    private handleHelp;
+    private handleEquip;
+    private handleUnequip;
+    private handleRestart;
+    setWorldState(key: string, value: boolean): void;
+    getWorldState(key: string): boolean;
+}
+//# sourceMappingURL=GameEngine.d.ts.map

@@ -1,0 +1,98 @@
+{
+  "movement": [
+    "go <DIRECTION>",
+    "enter",
+    "exit",
+    "climb",
+    "jump",
+    "swim",
+    "dive",
+    "teleport"
+  ],
+  "examination": [
+    "look",
+    "examine",
+    "read",
+    "search",
+    "listen",
+    "smell",
+    "taste"
+  ],
+  "manipulation": [
+    "take",
+    "leave",
+    "insert",
+    "remove",
+    "wear"
+  ],
+  "interaction": [
+    "open",
+    "close",
+    "lock",
+    "unlock",
+    "push",
+    "pull",
+    "move",
+    "turn",
+    "rotate",
+    "break",
+    "hit",
+    "attack",
+    "fight",
+    "kill",
+    "stab",
+    "touch",
+    "rub"
+  ],
+  "use": [
+    "use",
+    "light",
+    "extinguish",
+    "burn",
+    "pour",
+    "fill",
+    "drink",
+    "eat",
+    "throw",
+    "raise",
+    "wind",
+    "ring",
+    "knock",
+    "press",
+    "wave",
+    "tie",
+    "untie",
+    "inflate",
+    "deflate"
+  ],
+  "complex_actions": [
+    "put x in y",
+    "put x on y",
+    "take x from y",
+    "give x to y",
+    "remove x from y",
+    "talk to x",
+    "ask x about y",
+    "show x to y",
+    "combine x with y"
+  ],
+  "communication": [
+    "say",
+    "shout",
+    "yell",
+    "answer",
+    "ask",
+    "tell",
+    "pray",
+    "cast"
+  ],
+  "meta": [
+    "think",
+    "wait",
+    "sleep"
+  ]
+}
+
+
+
+

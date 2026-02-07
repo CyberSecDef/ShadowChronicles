@@ -1,0 +1,31 @@
+{
+  "name": "shadow-chronicles",
+  "version": "1.0.0",
+  "description": "A text-based adventure game set in a post-nuclear dystopian world",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm run dev:server & npm run dev:client",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "npm run copy:data && npm run build:server && npm run build:client",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "copy:data": "mkdir -p client/public/data/rooms && cp -r data/rooms/* client/public/data/rooms/",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "start": "cd server && npm start"
+  },
+  "keywords": [
+    "game",
+    "text-adventure",
+    "interactive-fiction",
+    "websocket",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT"
+}

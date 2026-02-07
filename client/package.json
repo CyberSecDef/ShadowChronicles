@@ -1,0 +1,15 @@
+{
+  "name": "shadow-chronicles-client",
+  "version": "1.0.0",
+  "description": "ShadowChronicles text adventure game client",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "^5.0.12",
+    "typescript": "^5.3.3"
+  }
+}
